@@ -1,389 +1,374 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>ResumeVibe Studio — Professional Resumes & Form Services</title>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>ResumeVibe Studio — Professional Resumes & Form Services</title>
 
-  <!-- Primary meta -->
-  <meta name="description" content="ResumeVibe Studio — Professional resume creation, form filling and typing services in Mumbai. Fast delivery, student friendly, 100% accuracy." />
-  <meta name="keywords" content="resume, resume writing, form filling, PAN, Aadhaar, college admission, resume Mumbai, resume services" />
-  <meta name="author" content="ResumeVibe Studio" />
-  <link rel="canonical" href="https://resumevibestudio-creator.github.io/ResumeVibeStudio/" />
+<!-- SEO Meta -->
+<meta name="description" content="ResumeVibe Studio — Professional resume creation, form filling, typing services. Fast delivery, student friendly, 100% accuracy. Mumbai." />
+<meta name="keywords" content="resume services, resume writing, form filling, typing, Mumbai resume, ATS resume, government forms" />
+<meta name="author" content="ResumeVibe Studio" />
 
-  <!-- Open Graph -->
-  <meta property="og:title" content="ResumeVibe Studio — Professional Resumes" />
-  <meta property="og:description" content="Fast resume creation, form filling & typing services. Located in Mumbai." />
-  <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://resumevibestudio-creator.github.io/ResumeVibeStudio/" />
+<!-- Canonical -->
+<link rel="canonical" href="https://resumevibestudio-creator.github.io/ResumeVibeStudio/" />
 
-  <!-- JSON-LD (Business Schema) -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "LocalBusiness",
-    "name": "ResumeVibe Studio",
-    "image": "https://resumevibestudio-creator.github.io/ResumeVibeStudio/logo.png",
-    "telephone": ["+917039840579","+919930045850"],
-    "address": {
-      "@type": "PostalAddress",
-      "addressLocality": "Mumbai",
-      "addressCountry": "IN"
-    },
-    "url":"https://resumevibestudio-creator.github.io/ResumeVibeStudio/",
-    "priceRange": "₹",
-    "description":"Resume creation, government & college form filling, typing and project formatting services."
-  }
-  </script>
+<!-- Open Graph -->
+<meta property="og:title" content="ResumeVibe Studio" />
+<meta property="og:description" content="Fast & affordable resume creation, form filling & typing services." />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://resumevibestudio-creator.github.io/ResumeVibeStudio/" />
 
-  <!-- Google Font -->
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<!-- JSON-LD (Business Schema) -->
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@type":"LocalBusiness",
+  "name":"ResumeVibe Studio",
+  "address":{"@type":"PostalAddress","addressLocality":"Mumbai","addressCountry":"IN"},
+  "telephone":["+917039840579","+919930045850"],
+  "url":"https://resumevibestudio-creator.github.io/ResumeVibeStudio/",
+  "priceRange":"₹",
+  "description":"Resume writing, form filling & typing services with fast delivery and 100% accuracy."
+}
+</script>
 
-  <style>
-    :root{
-      --blue:#0a3d91;
-      --accent:#4d91ff;
-      --bg:#f5faff;
-      --gold:#d4af37;
-      --dark:#0b0b0c;
-      --card-radius:14px;
-    }
-    /* Dark (Black+Gold) theme variables applied when .dark-mode on <body> */
-    body{font-family:'Poppins',sans-serif;margin:0;background:var(--bg);color:#222;scroll-behavior:smooth}
-    header{background:var(--blue);color:#fff;position:sticky;top:0;z-index:1000;padding:18px 12px;box-shadow:0 3px 10px rgba(0,0,0,.15)}
-    nav{display:flex;justify-content:center;gap:22px;margin-top:8px}
-    nav a{color:#fff;text-decoration:none;font-weight:600}
-    .hero{background:linear-gradient(90deg,var(--blue),var(--accent));color:#fff;padding:90px 20px;text-align:center}
-    .hero h1{font-size:42px;margin:0}
-    .hero p{margin-top:10px;font-size:18px}
+<!-- Google Font -->
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
 
-    .trust-box{display:flex;gap:12px;justify-content:center;margin-top:20px;flex-wrap:wrap}
-    .trust-item{background:#fff;color:var(--blue);padding:8px 16px;border-radius:30px;font-weight:700;box-shadow:0 3px 8px rgba(0,0,0,.12)}
+<style>
+:root {
+  --blue:#0a3d91;
+  --gold:#d4af37;
+  --dark:#050505;
+  --accent:#4d91ff;
+  --bg:#f5faff;
+  --radius:14px;
+}
 
-    .section{max-width:1200px;margin:50px auto;padding:0 18px}
-    h2{text-align:center;color:var(--blue);font-size:32px;margin-bottom:28px}
+body {
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  background: var(--bg);
+  scroll-behavior: smooth;
+}
 
-    /* service grid */
-    .service-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:20px}
-    .card{background:#fff;padding:20px;border-radius:var(--card-radius);box-shadow:0 6px 18px rgba(12,12,12,.06);text-align:center;transition:transform .25s,box-shadow .25s}
-    .card:hover{transform:translateY(-8px);box-shadow:0 12px 30px rgba(12,12,12,.12)}
-    .icon{font-size:42px;margin-bottom:8px}
-    .title{font-weight:700;color:var(--blue);margin:6px 0}
-    .price{font-weight:800;color:var(--blue);margin:8px 0}
-    .desc{color:#444;margin-bottom:12px}
-    .pay-row{display:flex;gap:10px;justify-content:center;align-items:center;flex-wrap:wrap}
+/* HEADER */
+header {
+  background: var(--blue);
+  color: white;
+  padding: 20px 10px;
+  position: sticky;
+  top: 0;
+  z-index: 999;
+  box-shadow: 0 3px 10px rgba(0,0,0,0.2);
+}
 
-    /* product style pay button (style D) */
-    .pay-card{background:linear-gradient(180deg,#fff,#f2f6ff);padding:10px;border-radius:10px;border:1px solid rgba(10,61,145,.06)}
-    .pay-btn{background:var(--dark);color:var(--gold);padding:10px 14px;border-radius:8px;text-decoration:none;font-weight:700;display:inline-block}
-    .pay-btn:hover{opacity:.95}
+nav { display: flex; gap: 25px; justify-content: center; margin-top: 10px; }
+nav a { color: white; text-decoration: none; font-weight: 500; }
+nav a:hover { color: #dfeaff; }
 
-    /* qr small */
-    .qr{width:86px;height:86px;border-radius:8px;border:1px solid #ddd;display:inline-block}
+/* HERO */
+.hero {
+  background: linear-gradient(to right, var(--blue), var(--accent));
+  color: white;
+  padding: 90px 20px;
+  text-align: center;
+}
+.hero h1 { font-size: 46px; font-weight: 700; }
 
-    /* testimonials */
-    .testimonials{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:18px}
-    .review{background:#fff;padding:16px;border-radius:12px;box-shadow:0 6px 18px rgba(0,0,0,.06);text-align:left}
+/* TRUST BADGES */
+.badges {
+  display: flex;
+  gap: 15px;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-top: 20px;
+}
+.badge {
+  background: white;
+  color: var(--blue);
+  padding: 10px 20px;
+  border-radius: 25px;
+  font-weight: 700;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.12);
+}
 
-    /* faq */
-    .faq .faq-item{background:#fff;padding:16px;border-radius:12px;box-shadow:0 6px 18px rgba(0,0,0,.06);margin-bottom:12px}
+/* SECTION */
+.section {
+  max-width: 1200px;
+  margin: auto;
+  padding: 60px 20px;
+}
+.section h2 {
+  text-align: center;
+  font-size: 34px;
+  color: var(--blue);
+  margin-bottom: 25px;
+}
 
-    /* samples */
-    .samples{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:16px}
-    .sample-card{background:#fff;padding:14px;border-radius:12px;text-align:center;box-shadow:0 6px 18px rgba(0,0,0,.06)}
-    .sample-btn{background:var(--blue);color:white;padding:8px 12px;border-radius:8px;text-decoration:none;font-weight:700;display:inline-block;margin:6px}
+/* SERVICES */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit,minmax(260px,1fr));
+  gap: 22px;
+}
+.card {
+  background: white;
+  padding: 20px;
+  border-radius: var(--radius);
+  box-shadow: 0 6px 18px rgba(0,0,0,0.12);
+  text-align: center;
+}
+.icon { font-size: 40px; }
+.price { font-size: 20px; font-weight: 700; color: var(--blue); }
 
-    /* contact */
-    .contact-info{text-align:center;font-size:16px}
+/* PAYMENT BOX */
+.paybox {
+  border: 1px solid #eee;
+  padding: 12px;
+  border-radius: 10px;
+  margin-top: 10px;
+  background: linear-gradient(180deg,#fff,#fbfdff);
+}
+.pay-btn {
+  background: black;
+  color: var(--gold);
+  padding: 10px 15px;
+  text-decoration: none;
+  border-radius: 10px;
+  font-weight: 700;
+}
+.order-btn {
+  background: var(--accent);
+  color: white;
+  padding: 10px 15px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 700;
+  margin-top: 8px;
+  display: inline-block;
+}
 
-    /* footer */
-    footer{background:var(--blue);color:white;padding:18px;text-align:center;margin-top:40px}
+/* SAMPLES */
+.samples { display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:20px; }
+.sample { background:white;padding:20px;border-radius:12px;box-shadow:0 6px 18px rgba(0,0,0,0.1); }
 
-    /* floating */
-    .whatsapp-btn{position:fixed;right:18px;bottom:18px;background:#25d366;padding:12px 16px;border-radius:28px;color:#fff;font-weight:700;text-decoration:none;box-shadow:0 6px 20px rgba(0,0,0,.2);z-index:999}
-    .call-btn{position:fixed;right:18px;bottom:80px;background:var(--blue);padding:10px 14px;border-radius:28px;color:#fff;text-decoration:none;box-shadow:0 6px 20px rgba(0,0,0,.2);z-index:999}
+/* TESTIMONIALS */
+.testimonials { display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:20px; }
 
-    /* dark-mode black+gold */
-    body.dark-mode{background:#050506;color:#ddd}
-    body.dark-mode header{background:#020204}
-    body.dark-mode nav a{color:var(--gold)}
-    body.dark-mode .hero{background:linear-gradient(90deg,#111,#222);color:var(--gold)}
-    body.dark-mode .trust-item{background:#111;color:var(--gold);box-shadow:0 3px 8px rgba(0,0,0,.6)}
-    body.dark-mode .card, body.dark-mode .review, body.dark-mode .faq .faq-item, body.dark-mode .sample-card{background:#0b0b0c;color:#ddd;box-shadow:0 6px 18px rgba(0,0,0,.6);border:1px solid rgba(255,215,0,.06)}
-    body.dark-mode .title, body.dark-mode .price{color:var(--gold)}
-    body.dark-mode .pay-card{background:linear-gradient(180deg,#0b0b0c,#0a0a0a)}
-    body.dark-mode .pay-btn{background:var(--gold);color:#0b0b0c}
-    body.dark-mode footer{background:#020204;color:var(--gold)}
-    body.dark-mode .sample-btn{background:var(--gold);color:#060606}
+/* FAQ */
+.faq-item { background:white;padding:15px;border-radius:12px;box-shadow:0 6px 18px rgba(0,0,0,0.1);margin-bottom:15px; }
 
-    /* small screen */
-    @media(max-width:640px){.hero{padding:60px 14px}.hero h1{font-size:28px}}
-  </style>
+/* CONTACT */
+.contact { text-align:center; font-size:18px; }
+
+/* FOOTER */
+footer { background:var(--blue); color:white; text-align:center; padding:20px; margin-top:40px; }
+
+/* FLOAT BUTTONS */
+.whatsapp-btn {
+  position: fixed; bottom: 20px; right: 20px;
+  background: #25d366; padding: 15px 18px;
+  border-radius: 30px; color: white; font-weight: 700;
+  text-decoration: none; z-index: 999;
+}
+.call-btn {
+  position: fixed; bottom: 85px; right: 20px;
+  background: var(--blue); padding: 13px 16px;
+  border-radius: 30px; color:white; text-decoration:none;
+}
+
+/* DARK MODE */
+body.dark {
+  background: var(--dark);
+  color: var(--gold);
+}
+body.dark header { background:black; }
+body.dark nav a { color: var(--gold); }
+body.dark .hero { background:black; }
+body.dark .badge { background:black; color:var(--gold); }
+body.dark .card, body.dark .sample, body.dark .faq-item {
+  background:#0d0d0d; color:var(--gold); border:1px solid #333;
+}
+body.dark footer { background:black;color:var(--gold); }
+
+@media(max-width:640px){
+  .hero{padding:60px 14px}
+  .hero h1{font-size:28px}
+}
+</style>
 </head>
+
 <body>
 
 <header>
-  <div style="display:flex;align-items:center;justify-content:space-between;max-width:1200px;margin:auto">
-    <div style="padding:6px 0">
-      <div style="font-weight:800;font-size:20px">ResumeVibe Studio</div>
-      <div style="font-size:12px;opacity:.9">Mumbai • Resumes & Form Services</div>
-    </div>
-    <div>
-      <nav>
-        <a href="#services">Services</a>
-        <a href="#samples">Samples</a>
-        <a href="#testimonials">Reviews</a>
-        <a href="#faq">FAQ</a>
-        <a href="#contact">Contact</a>
-      </nav>
-    </div>
-    <div style="display:flex;gap:8px;align-items:center">
-      <button id="themeToggle" style="background:transparent;border:1px solid rgba(255,255,255,.14);padding:8px 10px;border-radius:8px;color:#fff;font-weight:700;cursor:pointer">Dark</button>
-    </div>
-  </div>
+  <nav>
+    <a href="#services">Services</a>
+    <a href="#samples">Samples</a>
+    <a href="#reviews">Reviews</a>
+    <a href="#faq">FAQ</a>
+    <a href="#contact">Contact</a>
+  </nav>
 </header>
 
-<!-- HERO -->
 <section class="hero">
-  <h1>Premium Resumes • Fast Form Filling • Student Friendly</h1>
-  <p>Professional resumes, government & college form service — fast, accurate and affordable.</p>
+  <h1>Professional Resumes • Form Filling • Typing</h1>
+  <p>Fast delivery • Student friendly • 100% accuracy</p>
 
-  <div class="trust-box" style="margin-top:18px">
-    <div class="trust-item">⚡ Fast Delivery</div>
-    <div class="trust-item">🎓 Student Friendly</div>
-    <div class="trust-item">✔ 100% Accuracy</div>
+  <div class="badges">
+    <div class="badge">⚡ Fast Delivery</div>
+    <div class="badge">🎓 Student Friendly</div>
+    <div class="badge">✔ 100% Accuracy</div>
   </div>
 </section>
 
 <!-- SERVICES -->
-<section id="services" class="section" aria-labelledby="services-heading">
-  <h2 id="services-heading">Our Services & Pricing</h2>
+<section id="services" class="section">
+<h2>Our Services</h2>
 
-  <div class="service-grid">
-    <!-- Simple Resume -->
-    <div class="card">
-      <div class="icon">📝</div>
-      <div class="title">Simple Resume</div>
-      <div class="price">₹149</div>
-      <div class="desc">Clean resume for students and freshers.</div>
+<div class="grid">
 
-      <div class="pay-row">
-        <div class="pay-card">
-          <div style="font-weight:700;margin-bottom:8px">Pay & Order</div>
-          <a class="pay-btn" href="upi://pay?pa=9930045850@ptyes&pn=ResumeVibe%20Studio&am=149&cu=INR">Pay ₹149</a>
-          <div style="margin-top:8px;font-size:12px">OR scan</div>
-          <img class="qr" alt="QR" src="https://chart.googleapis.com/chart?chs=200x200&cht=qr&chl=upi%3A%2F%2Fpay%3Fpa%3D9930045850%40ptyes%26pn%3DResumeVibe%2520Studio%26am%3D149%26cu%3DINR" />
-        </div>
+<!-- SIMPLE RESUME -->
+<div class="card">
+  <div class="icon">📝</div>
+  <h3>Simple Resume</h3>
+  <div class="price">₹149</div>
 
-        <a class="order-btn" style="background:var(--accent);color:#fff;padding:10px 12px;border-radius:9px;text-decoration:none;font-weight:700" href="https://wa.me/917039840579?text=I%20want%20to%20order%20Simple%20Resume%20(₹149)">Order Now</a>
-      </div>
-
-      <div style="margin-top:12px">
-        <a class="sample-btn" href="samples/sample1.html" target="_blank">View Sample</a>
-        <a class="sample-btn" href="samples/sample1.html" onclick="window.print()">Download</a>
-      </div>
-    </div>
-
-    <!-- Professional Resume -->
-    <div class="card">
-      <div class="icon">💼</div>
-      <div class="title">Professional Resume</div>
-      <div class="price">₹249</div>
-      <div class="desc">Polished professional resume with formatting.</div>
-
-      <div class="pay-row">
-        <div class="pay-card">
-          <div style="font-weight:700;margin-bottom:8px">Pay & Order</div>
-          <a class="pay-btn" href="upi://pay?pa=9930045850@ptyes&pn=ResumeVibe%20Studio&am=249&cu=INR">Pay ₹249</a>
-          <div style="margin-top:8px;font-size:12px">OR scan</div>
-          <img class="qr" alt="QR" src="https://chart.googleapis.com/chart?chs=200x200&cht=qr&chl=upi%3A%2F%2Fpay%3Fpa%3D9930045850%40ptyes%26pn%3DResumeVibe%2520Studio%26am%3D249%26cu%3DINR" />
-        </div>
-
-        <a class="order-btn" style="background:var(--accent);color:#fff;padding:10px 12px;border-radius:9px;text-decoration:none;font-weight:700" href="https://wa.me/917039840579?text=I%20want%20to%20order%20Professional%20Resume%20(₹249)">Order Now</a>
-      </div>
-
-      <div style="margin-top:12px">
-        <a class="sample-btn" href="samples/sample2.html" target="_blank">View Sample</a>
-        <a class="sample-btn" href="samples/sample2.html" onclick="window.print()">Download</a>
-      </div>
-    </div>
-
-    <!-- ATS Resume -->
-    <div class="card">
-      <div class="icon">🎯</div>
-      <div class="title">ATS Resume</div>
-      <div class="price">₹399</div>
-      <div class="desc">ATS-friendly resume that passes applicant tracking systems.</div>
-
-      <div class="pay-row">
-        <div class="pay-card">
-          <div style="font-weight:700;margin-bottom:8px">Pay & Order</div>
-          <a class="pay-btn" href="upi://pay?pa=9930045850@ptyes&pn=ResumeVibe%20Studio&am=399&cu=INR">Pay ₹399</a>
-          <div style="margin-top:8px;font-size:12px">OR scan</div>
-          <img class="qr" alt="QR" src="https://chart.googleapis.com/chart?chs=200x200&cht=qr&chl=upi%3A%2F%2Fpay%3Fpa%3D9930045850%40ptyes%26pn%3DResumeVibe%2520Studio%26am%3D399%26cu%3DINR" />
-        </div>
-
-        <a class="order-btn" style="background:var(--accent);color:#fff;padding:10px 12px;border-radius:9px;text-decoration:none;font-weight:700" href="https://wa.me/917039840579?text=I%20want%20to%20order%20ATS%20Resume%20(₹399)">Order Now</a>
-      </div>
-
-      <div style="margin-top:12px">
-        <a class="sample-btn" href="samples/sample3.html" target="_blank">View Sample</a>
-        <a class="sample-btn" href="samples/sample3.html" onclick="window.print()">Download</a>
-      </div>
-    </div>
-
-    <!-- Cover Letter -->
-    <div class="card">
-      <div class="icon">✉️</div>
-      <div class="title">Cover Letter</div>
-      <div class="price">₹99</div>
-      <div class="desc">Custom cover letter tailored to your job application.</div>
-
-      <div class="pay-row">
-        <div class="pay-card">
-          <div style="font-weight:700;margin-bottom:8px">Pay & Order</div>
-          <a class="pay-btn" href="upi://pay?pa=9930045850@ptyes&pn=ResumeVibe%20Studio&am=99&cu=INR">Pay ₹99</a>
-          <div style="margin-top:8px;font-size:12px">OR scan</div>
-          <img class="qr" alt="QR" src="https://chart.googleapis.com/chart?chs=200x200&cht=qr&chl=upi%3A%2F%2Fpay%3Fpa%3D9930045850%40ptyes%26pn%3DResumeVibe%2520Studio%26am%3D99%26cu%3DINR" />
-        </div>
-
-        <a class="order-btn" style="background:var(--accent);color:#fff;padding:10px 12px;border-radius:9px;text-decoration:none;font-weight:700" href="https://wa.me/917039840579?text=I%20want%20to%20order%20Cover%20Letter%20(₹99)">Order Now</a>
-      </div>
-    </div>
-
-    <!-- Typing services -->
-    <div class="card">
-      <div class="icon">⌨️</div>
-      <div class="title">Assignment Typing</div>
-      <div class="price">₹10 / page</div>
-      <div class="desc">Fast & accurate typing with formatting.</div>
-      <div style="margin-top:12px"><a class="order-btn" href="https://wa.me/917039840579?text=I%20want%20Assignment%20Typing">Order Now</a></div>
-    </div>
-
-    <div class="card">
-      <div class="icon">📚</div>
-      <div class="title">Project Formatting</div>
-      <div class="price">₹199</div>
-      <div class="desc">Professional indexing, formatting & structure.</div>
-      <div style="margin-top:12px"><a class="order-btn" href="https://wa.me/917039840579?text=I%20want%20Project%20Formatting">Order Now</a></div>
-    </div>
-
-    <div class="card">
-      <div class="icon">🗂️</div>
-      <div class="title">Government Forms</div>
-      <div class="price">Varies</div>
-      <div class="desc">PAN, Aadhaar update, certificates & more.</div>
-      <div style="margin-top:12px"><a class="order-btn" href="https://wa.me/917039840579?text=I%20need%20Government%20Form%20Help">Order Now</a></div>
-    </div>
-
-    <div class="card">
-      <div class="icon">🏫</div>
-      <div class="title">College / School Admission</div>
-      <div class="price">Varies</div>
-      <div class="desc">Accurate admission form assistance.</div>
-      <div style="margin-top:12px"><a class="order-btn" href="https://wa.me/917039840579?text=I%20need%20Admission%20Form%20Help">Order Now</a></div>
-    </div>
-
+  <div class="paybox">
+    <a class="pay-btn" href="upi://pay?pa=9930045850@ptyes&pn=ResumeVibeStudio&am=149&cu=INR">Pay ₹149</a>
+    <div style="margin-top:8px;font-size:13px;color:#666">Or order via WhatsApp</div>
   </div>
+
+  <a class="order-btn" href="https://wa.me/917039840579?text=I%20want%20Simple%20Resume%20₹149">
+    Order Now
+  </a>
+</div>
+
+<!-- PROFESSIONAL RESUME -->
+<div class="card">
+  <div class="icon">💼</div>
+  <h3>Professional Resume</h3>
+  <div class="price">₹249</div>
+
+  <div class="paybox">
+    <a class="pay-btn" href="upi://pay?pa=9930045850@ptyes&pn=ResumeVibeStudio&am=249&cu=INR">Pay ₹249</a>
+    <div style="margin-top:8px;font-size:13px;color:#666">Or order via WhatsApp</div>
+  </div>
+
+  <a class="order-btn" href="https://wa.me/917039840579?text=I%20want%20Professional%20Resume%20₹249">
+    Order Now
+  </a>
+</div>
+
+<!-- ATS RESUME -->
+<div class="card">
+  <div class="icon">🎯</div>
+  <h3>ATS Resume</h3>
+  <div class="price">₹399</div>
+
+  <div class="paybox">
+    <a class="pay-btn" href="upi://pay?pa=9930045850@ptyes&pn=ResumeVibeStudio&am=399&cu=INR">Pay ₹399</a>
+    <div style="margin-top:8px;font-size:13px;color:#666">Or order via WhatsApp</div>
+  </div>
+
+  <a class="order-btn" href="https://wa.me/917039840579?text=I%20want%20ATS%20Resume%20₹399">
+    Order Now
+  </a>
+</div>
+
+<!-- COVER LETTER -->
+<div class="card">
+  <div class="icon">✉️</div>
+  <h3>Cover Letter</h3>
+  <div class="price">₹99</div>
+
+  <div class="paybox">
+    <a class="pay-btn" href="upi://pay?pa=9930045850@ptyes&pn=ResumeVibeStudio&am=99&cu=INR">Pay ₹99</a>
+    <div style="margin-top:8px;font-size:13px;color:#666">Or order via WhatsApp</div>
+  </div>
+
+  <a class="order-btn" href="https://wa.me/917039840579?text=I%20want%20Cover%20Letter%20₹99">
+    Order Now
+  </a>
+</div>
+
+</div>
 </section>
 
 <!-- SAMPLES -->
 <section id="samples" class="section">
-  <h2>Resume Samples (View / Download)</h2>
-  <div class="samples">
-    <div class="sample-card">
-      <h3>Modern Clean</h3>
-      <p>Simple, minimal layout best for students.</p>
-      <a class="sample-btn" href="samples/sample1.html" target="_blank">View</a>
-      <a class="sample-btn" href="samples/sample1.html" onclick="window.print()">Download</a>
-    </div>
+<h2>Resume Samples</h2>
 
-    <div class="sample-card">
-      <h3>ATS Friendly</h3>
-      <p>Structured for recruiter systems and corporate roles.</p>
-      <a class="sample-btn" href="samples/sample2.html" target="_blank">View</a>
-      <a class="sample-btn" href="samples/sample2.html" onclick="window.print()">Download</a>
-    </div>
+<div class="samples">
 
-    <div class="sample-card">
-      <h3>Creative Two-Column</h3>
-      <p>Stylish layout for creatives and designers.</p>
-      <a class="sample-btn" href="samples/sample3.html" target="_blank">View</a>
-      <a class="sample-btn" href="samples/sample3.html" onclick="window.print()">Download</a>
-    </div>
-  </div>
+<div class="sample">
+  <h3>Modern Clean</h3>
+  <a class="order-btn" href="samples/sample1.html" target="_blank">View</a>
+</div>
+
+<div class="sample">
+  <h3>ATS Friendly</h3>
+  <a class="order-btn" href="samples/sample2.html" target="_blank">View</a>
+</div>
+
+<div class="sample">
+  <h3>Creative Design</h3>
+  <a class="order-btn" href="samples/sample3.html" target="_blank">View</a>
+</div>
+
+</div>
 </section>
 
-<!-- TESTIMONIALS -->
-<section id="testimonials" class="section">
-  <h2>Customer Reviews</h2>
-  <div class="testimonials">
-    <div class="review"><p>⭐ ⭐ ⭐ ⭐ ⭐</p><p>"Super fast service — my resume looked professional instantly!"</p><strong>- Priya S.</strong></div>
-    <div class="review"><p>⭐ ⭐ ⭐ ⭐ ⭐</p><p>"Great help with college forms, saved me hours."</p><strong>- Rohit K.</strong></div>
-    <div class="review"><p>⭐ ⭐ ⭐ ⭐ ⭐</p><p>"Affordable and accurate—highly recommended."</p><strong>- Meera J.</strong></div>
-  </div>
+<!-- REVIEWS -->
+<section id="reviews" class="section">
+<h2>Customer Reviews</h2>
+
+<div class="testimonials">
+<div class="faq-item">⭐ ⭐ ⭐ ⭐ ⭐ “Very quick service and perfect resume!” – Priya</div>
+<div class="faq-item">⭐ ⭐ ⭐ ⭐ ⭐ “Affordable and accurate form filling.” – Meera</div>
+<div class="faq-item">⭐ ⭐ ⭐ ⭐ ⭐ “Good for ATS resumes.” – Rohit</div>
+</div>
 </section>
 
 <!-- FAQ -->
 <section id="faq" class="section">
-  <h2>FAQ</h2>
-  <div class="faq">
-    <div class="faq-item"><h4>How fast can I get a resume?</h4><p>Most orders are delivered within 15–30 minutes; complex requests may take longer.</p></div>
-    <div class="faq-item"><h4>How do I pay?</h4><p>Use the Pay buttons (UPI) or scan the QR code next to each product. You can also order via WhatsApp and pay later if you prefer.</p></div>
-    <div class="faq-item"><h4>Can I request edits?</h4><p>Yes — one-time free edit included after delivery.</p></div>
-  </div>
+<h2>FAQ</h2>
+
+<div class="faq-item"><strong>How fast can I get a resume?</strong><br>Most resumes are ready in 15–30 minutes.</div>
+<div class="faq-item"><strong>Do you offer online service?</strong><br>Yes, via WhatsApp.</div>
+<div class="faq-item"><strong>Do you give free edits?</strong><br>Yes, one-time free editing.</div>
+
 </section>
 
 <!-- CONTACT -->
 <section id="contact" class="section">
-  <h2>Contact Us</h2>
-  <div class="contact-info">
-    <p>📍 <strong>Location:</strong> Mumbai</p>
-    <p>📞 <strong>Phone:</strong> 7039840579 / 9930045850</p>
-    <p>📧 <strong>Email:</strong> resumevibestudio@gmail.com</p>
-  </div>
+<h2>Contact Us</h2>
+<div class="contact">
+<p>📍 Mumbai</p>
+<p>📞 7039840579 / 9930045850</p>
+<p>📧 resumevibestudio@gmail.com</p>
+</div>
 </section>
 
 <footer>
   © 2025 ResumeVibe Studio — All Rights Reserved
 </footer>
 
-<!-- Floating action buttons -->
-<a class="whatsapp-btn" href="https://wa.me/917039840579" target="_blank">💬 WhatsApp</a>
+<!-- FLOATING BUTTONS -->
+<a class="whatsapp-btn" href="https://wa.me/917039840579">💬 WhatsApp</a>
 <a class="call-btn" href="tel:+917039840579">📞 Call</a>
 
 <script>
-  // Dark mode toggle (Black + Gold theme)
-  const themeToggle = document.getElementById('themeToggle');
-  function setTheme(dark){
-    if(dark){ document.body.classList.add('dark-mode'); themeToggle.textContent='Light'; localStorage.setItem('dark','1'); }
-    else{ document.body.classList.remove('dark-mode'); themeToggle.textContent='Dark'; localStorage.removeItem('dark'); }
-  }
-  // load preference
-  if(localStorage.getItem('dark')) setTheme(true);
-  themeToggle.addEventListener('click', ()=> setTheme(!document.body.classList.contains('dark-mode')) );
+// Dark Mode Toggle using localStorage
+const bodyEl = document.body;
+const isDark = localStorage.getItem('rv_dark') === '1';
+if(isDark) bodyEl.classList.add('dark');
 
-  // Make UPI links also attempt to open payment on mobile (fallback to QR if not supported)
-  document.querySelectorAll('.pay-btn').forEach(btn=>{
-    btn.addEventListener('click', (e)=>{
-      // let link = btn.getAttribute('href'); // the upi:// link already triggers on mobile
-      // no additional JS needed; the href is enough for mobile; desktop will do nothing (use QR)
-    });
-  });
-
-  // Simple SEO: add meta refresh & register service worker? (left minimal — recommend Google Search Console)
-  // Smooth anchored scrolling offset to account for sticky header
-  const headerHeight = document.querySelector('header').offsetHeight;
-  document.querySelectorAll('a[href^="#"]').forEach(a=>{
-    a.addEventListener('click', function(e){
-      e.preventDefault();
-      const id = this.getAttribute('href').slice(1);
-      const el = document.getElementById(id);
-      if(!el) return;
-      const top = el.getBoundingClientRect().top + window.scrollY - headerHeight - 12;
-      window.scrollTo({top, behavior:'smooth'});
-    });
-  });
+// add small keyboard toggle (d) as extra
+document.addEventListener('keydown', (e)=>{
+  if(e.key === 'd'){ bodyEl.classList.toggle('dark'); localStorage.setItem('rv_dark', bodyEl.classList.contains('dark') ? '1' : '0'); }
+});
 </script>
 
 </body>
