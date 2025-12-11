@@ -1,0 +1,289 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Pricing — ResumeVibe Studio</title>
+  <meta name="description" content="Full price list for ResumeVibe Studio online services: resumes, form filling, typing, ticket booking, payments and more.">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root{
+      --blue:#0a3d91;
+      --accent:#4d91ff;
+      --gold:#d4af37;
+      --bg:#f5faff;
+      --dark:#0b0b0c;
+      --card-radius:12px;
+      --maxw:1100px;
+    }
+    *{box-sizing:border-box}
+    body{font-family:'Poppins',sans-serif;margin:0;background:var(--bg);color:#111;line-height:1.45}
+    header{background:var(--blue);color:#fff;padding:18px 12px;position:sticky;top:0;z-index:1000}
+    .container{max-width:var(--maxw);margin:28px auto;padding:0 16px}
+    .top{display:flex;align-items:center;justify-content:space-between;gap:12px}
+    .brand{font-weight:800;font-size:20px}
+    nav a{color:#fff;text-decoration:none;margin-left:14px;font-weight:600}
+    h1{margin:12px 0 6px;font-size:28px;color:var(--blue)}
+    .intro{color:#444;margin-bottom:18px}
+    .badges{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:20px}
+    .badge{background:#fff;padding:8px 12px;border-radius:24px;font-weight:700;color:var(--blue);box-shadow:0 3px 8px rgba(0,0,0,.08)}
+
+    /* grid */
+    .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:16px}
+
+    /* card */
+    .card{background:#fff;padding:16px;border-radius:var(--card-radius);box-shadow:0 6px 18px rgba(0,0,0,.06)}
+    .card h3{margin:0 0 8px;color:var(--blue)}
+    .charge{font-weight:700;color:#1a4fb3;margin-bottom:8px}
+    .small{color:#555;font-size:14px;margin-bottom:8px}
+    ul{margin:8px 0 0 18px;padding:0;color:#333}
+
+    /* large full-list style */
+    .section-title{margin-top:28px;margin-bottom:10px;font-size:20px;color:var(--blue)}
+    .note{background:#fffbe6;border-left:4px solid var(--gold);padding:12px;border-radius:8px;color:#444;margin:18px 0}
+
+    /* footer */
+    footer{background:var(--blue);color:#fff;padding:18px;text-align:center;margin-top:28px}
+
+    /* floating */
+    .top-actions{display:flex;gap:8px;align-items:center}
+    .btn{background:var(--accent);color:#fff;padding:8px 12px;border-radius:8px;text-decoration:none;font-weight:700}
+    .muted{background:#eef6ff;color:var(--blue);padding:6px 10px;border-radius:8px;font-weight:700}
+
+    /* dark */
+    body.dark{background:#050506;color:var(--gold)}
+    body.dark .card, body.dark .note{background:#0b0b0c;color:var(--gold);border:1px solid rgba(255,215,0,.06)}
+    body.dark .badge, body.dark .muted{background:#0b0b0c;color:var(--gold);border:1px solid rgba(255,215,0,.06)}
+    body.dark footer{background:#020204;color:var(--gold)}
+    body.dark nav a{color:var(--gold)}
+    body.dark h1, body.dark .section-title{color:var(--gold)}
+
+    @media(max-width:640px){.top{flex-direction:column;align-items:flex-start}.top .brand{margin-bottom:8px}}
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="container top">
+    <div style="display:flex;align-items:center;gap:12px">
+      <div class="brand">ResumeVibe Studio</div>
+      <div style="font-size:13px;color:#dbe8ff">Mumbai • Resumes & Online Services</div>
+    </div>
+
+    <div class="top-actions">
+      <nav>
+        <a href="index.html" style="color:#fff;text-decoration:none">Home</a>
+        <a href="pricing.html" style="color:#fff;text-decoration:underline">Pricing</a>
+      </nav>
+      <button id="themeToggle" style="margin-left:12px;background:transparent;border:1px solid rgba(255,255,255,.14);color:#fff;padding:6px 8px;border-radius:8px;cursor:pointer">Dark</button>
+    </div>
+  </div>
+</header>
+
+<main class="container">
+  <h1>Online Service Price List</h1>
+  <p class="intro">Below is the full price list for our online services. Many services have fixed rates; some depend on third-party fees (exam / form fees). For variable services we charge a service fee plus the official form/exam fees.</p>
+
+  <div class="badges">
+    <div class="badge">⚡ Fast Delivery</div>
+    <div class="badge">🎓 Student Friendly</div>
+    <div class="badge">✔ 100% Accuracy</div>
+  </div>
+
+  <div class="note">
+    <strong>Note:</strong> Where a service says "Varies" or shows a range, final charges depend on the official form/exam fees or complexity. We will confirm the exact total before processing.
+  </div>
+
+  <!-- FULL LIST -->
+  <div>
+
+    <div class="section-title">1) Photo & Signature Services</div>
+    <div class="grid">
+      <div class="card">
+        <h3>Photo / Signature Resize</h3>
+        <div class="charge">₹10 per file</div>
+        <div class="small">Format & size adjustments (passport, A4, web forms).</div>
+      </div>
+      <div class="card">
+        <h3>Background Removal</h3>
+        <div class="charge">₹10 – ₹20</div>
+        <div class="small">White/transparent background removal depending on complexity.</div>
+      </div>
+      <div class="card">
+        <h3>File Size Reduction</h3>
+        <div class="charge">₹10</div>
+        <div class="small">Compress or resize (KB/MB) for upload requirements.</div>
+      </div>
+    </div>
+
+    <div class="section-title">2) PDF Editing Services</div>
+    <div class="grid">
+      <div class="card">
+        <h3>Simple Edit (Merge / Split / Compress)</h3>
+        <div class="charge">₹20 – ₹40</div>
+        <div class="small">Quick single-action edits.</div>
+      </div>
+      <div class="card">
+        <h3>Medium Editing (Multiple pages)</h3>
+        <div class="charge">₹50 – ₹100</div>
+        <div class="small">Multi-page adjustments and layout fixes.</div>
+      </div>
+      <div class="card">
+        <h3>Heavy Editing (Form corrections)</h3>
+        <div class="charge">₹100 – ₹150</div>
+        <div class="small">Text/image edits inside forms, complex corrections.</div>
+      </div>
+    </div>
+
+    <div class="section-title">3) Online Bill Payment Services</div>
+    <div class="grid">
+      <div class="card">
+        <h3>Electricity / Water / Gas / DTH / Mobile</h3>
+        <div class="charge">₹10 – ₹20 per bill</div>
+        <div class="small">We pay the bill and send you confirmation (service charge applies).</div>
+      </div>
+    </div>
+
+    <div class="section-title">4) Ticket Booking Services</div>
+    <div class="grid">
+      <div class="card">
+        <h3>Bus Ticket</h3>
+        <div class="charge">₹20 – ₹40</div>
+        <div class="small">Booking & e-ticket delivery.</div>
+      </div>
+
+      <div class="card">
+        <h3>Train Ticket (IRCTC)</h3>
+        <div class="charge">Normal ₹100 • Tatkal ₹150 – ₹250</div>
+        <div class="small">Tatkal fees vary depending on timing & availability.</div>
+      </div>
+
+      <div class="card">
+        <h3>Flight Ticket</h3>
+        <div class="charge">₹100 – ₹200</div>
+        <div class="small">Booking assistance and fare search.</div>
+      </div>
+    </div>
+
+    <div class="section-title">5) Document Typing Services</div>
+    <div class="grid">
+      <div class="card">
+        <h3>English Typing</h3>
+        <div class="charge">₹25 per page</div>
+      </div>
+      <div class="card">
+        <h3>Hindi Typing</h3>
+        <div class="charge">₹30 per page</div>
+      </div>
+      <div class="card">
+        <h3>Marathi Typing</h3>
+        <div class="charge">₹30 per page</div>
+      </div>
+      <div class="card">
+        <h3>Urgent Work</h3>
+        <div class="charge">+50% Extra</div>
+      </div>
+    </div>
+
+    <div class="section-title">6) Social Media & Account Setup</div>
+    <div class="grid">
+      <div class="card">
+        <h3>Single Account Setup (FB / Insta / Gmail / WhatsApp Biz)</h3>
+        <div class="charge">₹50 – ₹100</div>
+      </div>
+      <div class="card">
+        <h3>Full Digital Business Setup (FB + Insta + Gmail + WhatsApp Biz)</h3>
+        <div class="charge">₹150 – ₹250</div>
+      </div>
+    </div>
+
+    <div class="section-title">7) Data Entry Services</div>
+    <div class="grid">
+      <div class="card">
+        <h3>Basic Data Entry</h3>
+        <div class="charge">₹60 per page/sheet</div>
+      </div>
+      <div class="card">
+        <h3>Bulk Data Entry (Full-day)</h3>
+        <div class="charge">₹300 – ₹500 per day</div>
+      </div>
+    </div>
+
+    <div class="section-title">8) Certificate Downloading Services</div>
+    <div class="grid">
+      <div class="card">
+        <h3>Download Only (Aadhaar, PAN, Income, Caste, Domicile)</h3>
+        <div class="charge">₹20 – ₹40</div>
+      </div>
+      <div class="card">
+        <h3>With OTP Help + Correction</h3>
+        <div class="charge">₹50+</div>
+      </div>
+    </div>
+
+    <div class="section-title">9) Online Application / Form Filling</div>
+    <div class="grid">
+      <div class="card">
+        <h3>Scholarship / College Admission / Job / Passport / PAN / Exam Forms</h3>
+        <div class="charge">₹30 – ₹80 per form (complex forms ₹100+)</div>
+        <div class="small">Final charge depends on form complexity & official fees.</div>
+      </div>
+    </div>
+
+    <div class="section-title">10) WhatsApp Support Plans</div>
+    <div class="grid">
+      <div class="card">
+        <h3>Basic</h3>
+        <div class="charge">₹50 / month</div>
+        <ul>
+          <li>Simple guidance</li>
+          <li>Document sharing help</li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <h3>Standard</h3>
+        <div class="charge">₹100 / month</div>
+        <ul>
+          <li>Priority replies</li>
+          <li>Form filling guidance</li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <h3>Premium</h3>
+        <div class="charge">₹150 – ₹200 / month</div>
+        <ul>
+          <li>Full support</li>
+          <li>Urgent work included</li>
+          <li>Fast response priority</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="section-title">✔ Ready for Poster / PDF</div>
+    <div class="card" style="margin-top:8px">
+      <p>If you'd like, I can convert this price list into a printable poster or a professional PDF price sheet for distribution online and in-store.</p>
+      <a class="btn" href="mailto:resumevibestudio@gmail.com?subject=Pricing%20Poster%20Request" style="text-decoration:none;background:var(--accent);color:#fff;padding:10px 12px;border-radius:8px;font-weight:700">Request Poster / PDF</a>
+    </div>
+
+  </div>
+</main>
+
+<footer>
+  © 2025 ResumeVibe Studio — All Rights Reserved
+</footer>
+
+<script>
+  // Dark mode saved preference
+  const themeToggle = document.getElementById('themeToggle');
+  function setDark(d){
+    if(d){ document.body.classList.add('dark'); themeToggle.textContent='Light'; localStorage.setItem('rv_dark','1'); }
+    else{ document.body.classList.remove('dark'); themeToggle.textContent='Dark'; localStorage.removeItem('rv_dark'); }
+  }
+  if(localStorage.getItem('rv_dark')) setDark(true);
+  themeToggle.addEventListener('click', ()=> setDark(!document.body.classList.contains('dark')));
+</script>
+</body>
+</html>
