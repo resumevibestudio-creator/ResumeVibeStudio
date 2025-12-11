@@ -5,25 +5,20 @@
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>ResumeVibe Studio — Your Trusted Partner for Online Services</title>
 
-  <!-- ===================== SEO BOOST ===================== -->
+  <!-- SEO -->
   <meta name="description" content="ResumeVibe Studio — Premium resume creation, ATS resume, typing work, government & college form filling services with fast delivery and 100% accuracy.">
   <meta name="keywords" content="resume making, ATS resume, professional resume, form filling, online form service, typing service, Mumbai resume, ResumeVibe Studio">
   <link rel="canonical" href="https://resumevibestudio-creator.github.io/ResumeVibeStudio/" />
-
-  <!-- Open Graph / Social Preview -->
   <meta property="og:title" content="ResumeVibe Studio — Resume & Online Digital Services">
   <meta property="og:description" content="Premium resumes, typing, form filling & online services. Fast, affordable & student-friendly.">
   <meta property="og:image" content="https://resumevibestudio-creator.github.io/ResumeVibeStudio/poster-share.png">
   <meta property="og:url" content="https://resumevibestudio-creator.github.io/ResumeVibeStudio/">
   <meta property="og:type" content="website">
-
-  <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="ResumeVibe Studio — Resume & Services">
   <meta name="twitter:description" content="Professional resume & online form services. Fast and accurate.">
   <meta name="twitter:image" content="https://resumevibestudio-creator.github.io/ResumeVibeStudio/poster-share.png">
 
-  <!-- Business Schema -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -37,132 +32,116 @@
   }
   </script>
 
-  <!-- Sitemap reference -->
   <link rel="sitemap" type="application/xml" href="https://resumevibestudio-creator.github.io/ResumeVibeStudio/sitemap.xml">
-  <!-- ===================== END SEO BOOST ===================== -->
-
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
   <style>
     :root{
-      --blue:#0a3d91;
-      --accent:#4d91ff;
-      --gold:#d4af37;
-      --bg:#f6f8fb;
-      --card:#ffffff;
-      --dark:#050506;
-      --muted:#6b7280;
+      --blue:#0a3d91; --accent:#4d91ff; --gold:#d4af37; --bg:#f6f8fb;
+      --card:#ffffff; --dark:#050506; --muted:#6b7280;
     }
     *{box-sizing:border-box}
+    html,body{height:100%}
     body{
-      margin:0;
-      font-family:'Poppins',sans-serif;
-      background:var(--bg);
-      color:#111;
+      margin:0; font-family:'Poppins',sans-serif; background:var(--bg); color:#111;
+      -webkit-font-smoothing:antialiased; -moz-osx-font-smoothing:grayscale; scroll-behavior:smooth;
     }
+    a{color:inherit}
 
-    /* ===================== PREMIUM HEADER ===================== */
-    .rv-header{
-      position:sticky;top:0;z-index:9999;
-      display:flex;align-items:center;justify-content:space-between;
-      padding:14px 20px;
-      background:linear-gradient(90deg,var(--blue),var(--accent));
-      color:#fff;
-      box-shadow:0 8px 30px rgba(0,0,0,0.18);
-    }
+    /* Header */
+    .rv-header{position:sticky;top:0;z-index:9999;display:flex;align-items:center;justify-content:space-between;padding:14px 20px;background:linear-gradient(90deg,var(--blue),var(--accent));color:#fff;box-shadow:0 8px 30px rgba(0,0,0,0.18);}
     .rv-brand{font-weight:800;font-size:22px}
     .rv-tag{font-size:12px;opacity:.9;margin-top:-3px}
     .rv-nav{display:flex;gap:16px}
     .rv-nav a{color:#fff;text-decoration:none;font-weight:600;opacity:.92}
     .rv-nav a:hover{opacity:1}
-    .rv-controls button{
-      background:transparent;
-      border:1px solid rgba(255,255,255,.3);
-      color:#fff;
-      padding:7px 12px;
-      border-radius:8px;
-      cursor:pointer;
-    }
+    .rv-controls button{background:transparent;border:1px solid rgba(255,255,255,.3);color:#fff;padding:7px 12px;border-radius:8px;cursor:pointer}
 
-    /* ===================== HERO ===================== */
-    .hero{
-      padding:100px 20px 80px;
-<!-- ===================== SERVICES SECTION ===================== -->
+    /* Hero */
+    .hero{padding:100px 20px 80px;text-align:center;color:#fff;position:relative;background:linear-gradient(135deg,#0a3d91,#3e7efc,#1e90ff);overflow:hidden}
+    .floating-shape{position:absolute;width:420px;height:420px;border-radius:50%;background:#fff;filter:blur(80px);opacity:.08;top:-80px;left:-120px}
+    .hero-title{font-size:46px;font-weight:700;margin:0 0 8px;opacity:0;transform:translateY(20px);transition:all .8s}
+    .hero-sub{max-width:820px;margin:0 auto;opacity:0;transform:translateY(20px);transition:all .9s .1s}
+
+    /* sections */
+    .section{max-width:1200px;margin:48px auto;padding:0 18px}
+    .section h2{text-align:center;color:var(--blue);font-size:30px;margin-bottom:18px}
+    .muted{color:var(--muted)}
+    .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:18px}
+    .card{background:var(--card);padding:18px;border-radius:12px;box-shadow:0 10px 30px rgba(10,13,30,0.06);text-align:center;transform:translateY(18px);opacity:0;transition:transform .6s cubic-bezier(.2,.9,.3,1),opacity .6s}
+    .card.reveal{transform:translateY(0);opacity:1}
+    .card:hover{transform:translateY(-10px) scale(1.02)}
+    .icon{font-size:36px}
+    .title{font-weight:700;color:var(--blue)}
+    .price{font-weight:800;color:#163a8a}
+    .pay-btn{background:#0b0b0b;color:var(--gold);padding:9px 12px;border-radius:8px;text-decoration:none;font-weight:800;display:inline-block}
+    .order-btn{background:var(--accent);color:#fff;padding:10px 12px;border-radius:8px;text-decoration:none;font-weight:700;display:inline-block;margin-top:8px}
+    .sample-card{padding:14px;border-radius:12px;background:linear-gradient(180deg,#fff,#fbfdff);border:1px solid rgba(10,61,145,0.04);transform:translateY(18px);opacity:0;transition:all .6s}
+    .sample-card.reveal{transform:translateY(0);opacity:1}
+    .review,.faq-item{background:#fff;padding:14px;border-radius:10px;box-shadow:0 10px 30px rgba(10,13,30,0.06);text-align:left;transform:translateY(18px);opacity:0;transition:all .6s}
+    .review.reveal,.faq-item.reveal{transform:translateY(0);opacity:1}
+    .contact{display:flex;flex-direction:column;align-items:center;gap:6px}
+    footer{background:linear-gradient(90deg,var(--blue),var(--accent));color:#fff;padding:18px;text-align:center;margin-top:36px}
+    .floating{position:fixed;right:18px;bottom:18px;display:flex;flex-direction:column;gap:12px;z-index:999}
+    .whatsapp{background:linear-gradient(45deg,#19c37d,#1bd86f);color:#072;padding:12px 14px;border-radius:999px;font-weight:800;text-decoration:none;display:inline-flex;align-items:center;gap:8px;box-shadow:0 12px 30px rgba(27,216,111,0.18);animation:cta-pulse 2.6s infinite}
+    .call{background:var(--blue);color:#fff;padding:11px 14px;border-radius:999px;text-decoration:none;font-weight:800;box-shadow:0 10px 30px rgba(10,61,145,0.12)}
+    @keyframes cta-pulse{0%{transform:translateY(0)}50%{transform:translateY(-6px) scale(1.02)}100%{transform:translateY(0)}}
+    .reveal{opacity:1 !important;transform:none !important}
+    .invisible{opacity:0;transform:translateY(18px)}
+    body.dark{background:var(--dark);color:var(--gold)}
+    body.dark .rv-header{background:#000}
+    body.dark .rv-nav a{color:var(--gold)}
+    body.dark .badge{background:#0b0b0b;color:var(--gold)}
+    body.dark .card, body.dark .sample-card, body.dark .review, body.dark .faq-item{background:#0b0b0c;color:var(--gold);border:1px solid rgba(255,215,0,0.04)}
+    body.dark footer{background:#000;color:var(--gold)}
+    @media(max-width:720px){.hero{padding:56px 14px}.hero h1{font-size:28px}.rv-nav{display:none}}
+  </style>
+</head>
+<body>
+
+<header class="rv-header">
+  <div>
+    <div class="rv-brand">ResumeVibe Studio</div>
+    <div class="rv-tag">Your Trusted Partner for Online Services</div>
+  </div>
+
+  <nav class="rv-nav">
+    <a href="#services">Services</a>
+    <a href="#samples">Samples</a>
+    <a href="#reviews">Reviews</a>
+    <a href="#faq">FAQ</a>
+    <a href="#contact">Contact</a>
+  </nav>
+
+  <div class="rv-controls">
+    <button id="themeToggle">Dark</button>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="floating-shape"></div>
+
+  <h1 class="hero-title">Premium Resumes & Fast Digital Services</h1>
+  <p class="hero-sub">Professional resume building, typing services, online form filling & student-friendly digital support with fast delivery.</p>
+</section>
+
 <section id="services" class="section" style="max-width:1200px;margin:60px auto;padding:0 20px;">
   <h2 style="text-align:center;color:#0a3d91;font-size:32px;margin-bottom:18px;">Our Services</h2>
-  <p style="text-align:center;color:#6b7280;max-width:820px;margin:6px auto 28px;">
-    Resume services, typing, professional form filling & online digital services — fast, accurate and student-friendly.
-  </p>
+  <p style="text-align:center;color:#6b7280;max-width:820px;margin:6px auto 28px;">Resume services, typing, professional form filling & online digital services — fast, accurate and student-friendly.</p>
 
   <div class="grid" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:20px;">
-
-    <!-- Simple Resume -->
-    <div class="card invisible">
-      <div class="icon">📝</div>
-      <div class="title">Simple Resume</div>
-      <div class="price">₹149</div>
-      <a class="pay-btn" href="upi://pay?pa=9930045850@ptyes&pn=ResumeVibeStudio&am=149&cu=INR">Pay ₹149</a>
-      <a class="order-btn" href="https://wa.me/917039840579?text=I%20want%20Simple%20Resume%20₹149">Order Now</a>
-    </div>
-
-    <!-- Professional Resume -->
-    <div class="card invisible">
-      <div class="icon">💼</div>
-      <div class="title">Professional Resume</div>
-      <div class="price">₹249</div>
-      <a class="pay-btn" href="upi://pay?pa=9930045850@ptyes&pn=ResumeVibeStudio&am=249&cu=INR">Pay ₹249</a>
-      <a class="order-btn" href="https://wa.me/917039840579?text=I%20want%20Professional%20Resume%20₹249">Order Now</a>
-    </div>
-
-    <!-- ATS Resume -->
-    <div class="card invisible">
-      <div class="icon">🎯</div>
-      <div class="title">ATS Resume</div>
-      <div class="price">₹399</div>
-      <a class="pay-btn" href="upi://pay?pa=9930045850@ptyes&pn=ResumeVibeStudio&am=399&cu=INR">Pay ₹399</a>
-      <a class="order-btn" href="https://wa.me/917039840579?text=I%20want%20ATS%20Resume%20₹399">Order Now</a>
-    </div>
-
-    <!-- Cover Letter -->
-    <div class="card invisible">
-      <div class="icon">✉️</div>
-      <div class="title">Cover Letter</div>
-      <div class="price">₹99</div>
-      <a class="pay-btn" href="upi://pay?pa=9930045850@ptyes&pn=ResumeVibeStudio&am=99&cu=INR">Pay ₹99</a>
-      <a class="order-btn" href="https://wa.me/917039840579?text=I%20want%20Cover%20Letter%20₹99">Order Now</a>
-    </div>
-
-    <!-- Government Forms -->
-    <div class="card invisible">
-      <div class="icon">🗂️</div>
-      <div class="title">Government & Exam Form Filling</div>
-      <div class="price">Charges Vary</div>
-      <a class="order-btn" href="https://wa.me/917039840579?text=I%20need%20Government%20Form%20Filling">Order Now</a>
-    </div>
-
-    <!-- College Forms -->
-    <div class="card invisible">
-      <div class="icon">🏫</div>
-      <div class="title">College / School Admission Forms</div>
-      <div class="price">Charges Vary</div>
-      <a class="order-btn" href="https://wa.me/917039840579?text=I%20need%20Admission%20Form%20Filling">Order Now</a>
-    </div>
-
-    <!-- Typing -->
-    <div class="card invisible">
-      <div class="icon">⌨️</div>
-      <div class="title">Assignment Typing</div>
-      <div class="price">₹10 / page</div>
-      <a class="order-btn" href="https://wa.me/917039840579?text=I%20need%20Assignment%20Typing">Order Now</a>
-    </div>
-
+    <div class="card invisible"><div class="icon">📝</div><div class="title">Simple Resume</div><div class="price">₹149</div><a class="pay-btn" href="upi://pay?pa=9930045850@ptyes&pn=ResumeVibeStudio&am=149&cu=INR">Pay ₹149</a><a class="order-btn" href="https://wa.me/917039840579?text=I%20want%20Simple%20Resume%20₹149">Order Now</a></div>
+    <div class="card invisible"><div class="icon">💼</div><div class="title">Professional Resume</div><div class="price">₹249</div><a class="pay-btn" href="upi://pay?pa=9930045850@ptyes&pn=ResumeVibeStudio&am=249&cu=INR">Pay ₹249</a><a class="order-btn" href="https://wa.me/917039840579?text=I%20want%20Professional%20Resume%20₹249">Order Now</a></div>
+    <div class="card invisible"><div class="icon">🎯</div><div class="title">ATS Resume</div><div class="price">₹399</div><a class="pay-btn" href="upi://pay?pa=9930045850@ptyes&pn=ResumeVibeStudio&am=399&cu=INR">Pay ₹399</a><a class="order-btn" href="https://wa.me/917039840579?text=I%20want%20ATS%20Resume%20₹399">Order Now</a></div>
+    <div class="card invisible"><div class="icon">✉️</div><div class="title">Cover Letter</div><div class="price">₹99</div><a class="pay-btn" href="upi://pay?pa=9930045850@ptyes&pn=ResumeVibeStudio&am=99&cu=INR">Pay ₹99</a><a class="order-btn" href="https://wa.me/917039840579?text=I%20want%20Cover%20Letter%20₹99">Order Now</a></div>
+    <div class="card invisible"><div class="icon">🗂️</div><div class="title">Government & Exam Form Filling</div><div class="price">Charges Vary</div><a class="order-btn" href="https://wa.me/917039840579?text=I%20need%20Government%20Form%20Filling">Order Now</a></div>
+    <div class="card invisible"><div class="icon">🏫</div><div class="title">College / School Admission Forms</div><div class="price">Charges Vary</div><a class="order-btn" href="https://wa.me/917039840579?text=I%20need%20Admission%20Form%20Filling">Order Now</a></div>
+    <div class="card invisible"><div class="icon">⌨️</div><div class="title">Assignment Typing</div><div class="price">₹10 / page</div><a class="order-btn" href="https://wa.me/917039840579?text=I%20need%20Assignment%20Typing">Order Now</a></div>
   </div>
 </section>
 
-<!-- ===================== SAMPLES ===================== -->
 <section id="samples" class="section" style="max-width:1200px;margin:60px auto;padding:0 20px;">
   <h2 style="text-align:center;color:#0a3d91;font-size:32px;margin-bottom:18px;">Resume Samples</h2>
-
   <div class="grid" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:20px;">
     <div class="sample-card invisible"><h3>Modern Clean</h3><a class="order-btn" href="samples/sample1.html" target="_blank">View Sample</a></div>
     <div class="sample-card invisible"><h3>ATS Friendly</h3><a class="order-btn" href="samples/sample2.html" target="_blank">View Sample</a></div>
@@ -170,10 +149,8 @@
   </div>
 </section>
 
-<!-- ===================== REVIEWS ===================== -->
 <section id="reviews" class="section" style="max-width:1200px;margin:60px auto;padding:0 20px;">
   <h2 style="text-align:center;color:#0a3d91;font-size:32px;margin-bottom:18px;">Customer Reviews</h2>
-
   <div class="grid" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:20px;">
     <div class="review invisible"><strong>Priya S.</strong><p>“Super fast — resume delivered in 20 minutes.”</p></div>
     <div class="review invisible"><strong>Rohit K.</strong><p>“Helped with admission forms; very accurate.”</p></div>
@@ -181,10 +158,8 @@
   </div>
 </section>
 
-<!-- ===================== FAQ ===================== -->
 <section id="faq" class="section" style="max-width:1200px;margin:60px auto;padding:0 20px;">
   <h2 style="text-align:center;color:#0a3d91;font-size:32px;margin-bottom:18px;">FAQ</h2>
-
   <div class="grid" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:20px;">
     <div class="faq-item invisible"><strong>How fast can I get a resume?</strong><p>Most resumes delivered in 15–30 minutes.</p></div>
     <div class="faq-item invisible"><strong>How do I pay?</strong><p>UPI / WhatsApp ordering available.</p></div>
@@ -192,96 +167,35 @@
   </div>
 </section>
 
-<!-- ===================== CONTACT ===================== -->
 <section id="contact" class="section" style="max-width:1200px;margin:60px auto;padding:0 20px;">
   <h2 style="text-align:center;color:#0a3d91;font-size:32px;margin-bottom:18px;">Contact Us</h2>
-
-  <div style="text-align:center;color:#0a3d91;font-size:18px;">
-    📍 Mumbai <br>
-    📞 7039840579 / 9930045850 <br>
-    📧 resumevibestudio@gmail.com
-  </div>
+  <div style="text-align:center;color:#0a3d91;font-size:18px;">📍 Mumbai <br> 📞 7039840579 / 9930045850 <br> 📧 resumevibestudio@gmail.com</div>
 </section>
 
-<!-- ===================== FOOTER ===================== -->
-<footer style="background:linear-gradient(90deg,#0a3d91,#4d91ff);color:#fff;text-align:center;padding:20px;">
-  © 2025 ResumeVibe Studio — All Rights Reserved
-</footer>
+<footer style="background:linear-gradient(90deg,#0a3d91,#4d91ff);color:#fff;text-align:center;padding:20px;">© 2025 ResumeVibe Studio — All Rights Reserved</footer>
 
-<!-- ===================== FLOATING BUTTONS ===================== -->
 <div class="floating" style="position:fixed;right:20px;bottom:20px;display:flex;flex-direction:column;gap:12px;z-index:999;">
-  <a class="whatsapp" href="https://wa.me/917039840579" target="_blank" 
-     style="background:#19c37d;color:white;padding:14px 16px;border-radius:50px;font-weight:700;text-decoration:none;">
-     💬 WhatsApp
-  </a>
-
-  <a class="call" href="tel:+917039840579"
-     style="background:#0a3d91;color:white;padding:14px 16px;border-radius:50px;font-weight:700;text-decoration:none;">
-     📞 Call
-  </a>
+  <a class="whatsapp" href="https://wa.me/917039840579" target="_blank" style="background:#19c37d;color:white;padding:14px 16px;border-radius:50px;font-weight:700;text-decoration:none;">💬 WhatsApp</a>
+  <a class="call" href="tel:+917039840579" style="background:#0a3d91;color:white;padding:14px 16px;border-radius:50px;font-weight:700;text-decoration:none;">📞 Call</a>
 </div>
 
-<!-- ===================== JS SCRIPTS ===================== -->
 <script>
 /* Dark Mode */
 const themeToggle = document.getElementById('themeToggle');
 const body = document.body;
-function applyTheme(){
-  if(localStorage.getItem('rv_dark')==='1'){
-    body.classList.add('dark');
-    themeToggle.textContent='Light';
-  } else {
-    body.classList.remove('dark');
-    themeToggle.textContent='Dark';
-  }
-}
+function applyTheme(){ if(localStorage.getItem('rv_dark')==='1'){ body.classList.add('dark'); themeToggle.textContent='Light'; } else { body.classList.remove('dark'); themeToggle.textContent='Dark'; } }
 applyTheme();
-themeToggle.addEventListener('click', ()=>{
-  const isDark = body.classList.toggle('dark');
-  localStorage.setItem('rv_dark', isDark ? '1' : '0');
-  themeToggle.textContent = isDark ? 'Light' : 'Dark';
-});
+themeToggle.addEventListener('click', ()=>{ const isDark = body.classList.toggle('dark'); localStorage.setItem('rv_dark', isDark ? '1' : '0'); themeToggle.textContent = isDark ? 'Light' : 'Dark'; });
 
 /* Reveal Animations */
-const io = new IntersectionObserver((entries,observer)=>{
-  entries.forEach(e=>{
-    if(e.isIntersecting){
-      e.target.classList.add('reveal');
-      observer.unobserve(e.target);
-    }
-  });
-},{threshold:0.15});
-
-window.addEventListener('load', ()=>{
-  document.querySelector('.hero-title').classList.add('reveal');
-  document.querySelector('.hero-sub').classList.add('reveal');
-  document.querySelectorAll('.card, .sample-card, .review, .faq-item')
-    .forEach(el=>io.observe(el));
-});
+const io = new IntersectionObserver((entries,observer)=>{ entries.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add('reveal'); observer.unobserve(e.target); } }); },{threshold:0.15});
+window.addEventListener('load', ()=>{ document.querySelector('.hero-title').classList.add('reveal'); document.querySelector('.hero-sub').classList.add('reveal'); document.querySelectorAll('.card, .sample-card, .review, .faq-item').forEach(el=>io.observe(el)); });
 
 /* Smooth Scroll */
-document.querySelectorAll('a[href^="#"]').forEach(a=>{
-  a.addEventListener('click', e=>{
-    const id = a.getAttribute('href').replace('#','');
-    const el = document.getElementById(id);
-    if(el){
-      e.preventDefault();
-      const top = el.getBoundingClientRect().top + window.scrollY - 70;
-      window.scrollTo({top,behavior:'smooth'});
-    }
-  });
-});
+document.querySelectorAll('a[href^="#"]').forEach(a=>{ a.addEventListener('click', e=>{ const id = a.getAttribute('href').replace('#',''); const el = document.getElementById(id); if(el){ e.preventDefault(); const top = el.getBoundingClientRect().top + window.scrollY - 70; window.scrollTo({top,behavior:'smooth'}); } }); });
 
 /* UPI Click Alert (Desktop) */
-document.querySelectorAll('.pay-btn').forEach(btn=>{
-  btn.addEventListener('click', ()=>{
-    setTimeout(()=>{
-      if(!/Mobi|Android/i.test(navigator.userAgent)){
-        alert("If UPI didn't open, please order via WhatsApp on your phone.");
-      }
-    },700);
-  });
-});
+document.querySelectorAll('.pay-btn').forEach(btn=>{ btn.addEventListener('click', ()=>{ setTimeout(()=>{ if(!/Mobi|Android/i.test(navigator.userAgent)){ alert("If UPI didn't open, please order via WhatsApp on your phone."); } },700); }); });
 </script>
 
 </body>
