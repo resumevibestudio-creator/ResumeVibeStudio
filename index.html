@@ -197,6 +197,293 @@ document.querySelectorAll('a[href^="#"]').forEach(a=>{ a.addEventListener('click
 /* UPI Click Alert (Desktop) */
 document.querySelectorAll('.pay-btn').forEach(btn=>{ btn.addEventListener('click', ()=>{ setTimeout(()=>{ if(!/Mobi|Android/i.test(navigator.userAgent)){ alert("If UPI didn't open, please order via WhatsApp on your phone."); } },700); }); });
 </script>
+  <!-- START: ResumeVibe Chatbot — Avatar + Welcome Popup + Multi-language -->
+<style>
+/* ---- Chat widget core styles ---- */
+#rvChatRoot{font-family: Poppins, Inter, system-ui, -apple-system, "Segoe UI", Roboto, Arial; position:fixed;right:18px;bottom:18px;z-index:11000}
+@keyframes rv-pulse{0%{transform:translateY(0) scale(1)}50%{transform:translateY(-6px) scale(1.03)}100%{transform:translateY(0) scale(1)}}
+@keyframes rv-slide-in{0%{opacity:0;transform:translateY(12px)}100%{opacity:1;transform:translateY(0)}}
+#rvChatBtn{width:64px;height:64px;border-radius:999px;background:linear-gradient(45deg,#19c37d,#1bd86f);color:#fff;display:flex;align-items:center;justify-content:center;font-weight:800;cursor:pointer;box-shadow:0 18px 48px rgba(27,216,111,0.14);border:none;animation:rv-pulse 2.8s infinite;transition:transform .18s}
+#rvChatBtn:hover{transform:translateY(-4px) scale(1.03)}
+#rvChatPanel{width:360px;max-width:92vw;border-radius:12px;overflow:hidden;box-shadow:0 30px 80px rgba(10,13,30,0.18);display:none;flex-direction:column;background:#fff;transform-origin:bottom right}
+#rvChatPanel.show{display:flex;animation:rv-slide-in .36s cubic-bezier(.2,.9,.3,1) both}
+#rvChatPanel header{background:linear-gradient(90deg,#0a3d91,#4d91ff);color:#fff;padding:10px 12px;font-weight:700;display:flex;align-items:center;gap:10px}
+#rvChatPanel header .rv-avatar{width:38px;height:38px;border-radius:999px;flex:0 0 38px;display:flex;align-items:center;justify-content:center;background:linear-gradient(90deg,#fff,#fff);box-shadow:0 6px 18px rgba(0,0,0,0.08)}
+#rvChatPanel header .rv-lang{margin-left:auto;display:flex;gap:6px;align-items:center}
+.rv-lang button{background:transparent;border:1px solid rgba(255,255,255,0.18);color:#fff;padding:6px;border-radius:8px;cursor:pointer;font-weight:700}
+#rvChatPanel .rv-body{padding:12px;max-height:60vh;overflow:auto;display:flex;flex-direction:column;gap:8px;background:linear-gradient(180deg,#fbfdff,#fff)}
+.rv-msg{margin:6px 0;padding:10px 12px;border-radius:10px;display:inline-block;max-width:84%}
+.rv-msg.bot{background:#f1f6ff;color:#072;align-self:flex-start}
+.rv-msg.user{background:#0a3d91;color:white;align-self:flex-end}
+.rv-actions{display:flex;gap:8px;flex-wrap:wrap;margin-top:8px}
+.rv-btn{padding:8px 10px;border-radius:8px;border:1px solid #e6eefc;background:#fff;cursor:pointer;font-weight:700;display:inline-flex;align-items:center;gap:8px;transition:transform .12s}
+.rv-btn:hover{transform:translateY(-4px)}
+.rv-btn.primary{background:linear-gradient(90deg,#0a3d91,#4d91ff);color:#fff;border:0}
+.rv-input{width:100%;padding:10px;border-radius:8px;border:1px solid #e6eefc;margin-top:8px}
+#rvFooter{display:flex;gap:8px;padding:10px;border-top:1px solid #f1f5ff;align-items:center;background:#fff}
+#rvSendInput{flex:1;padding:10px;border-radius:10px;border:1px solid #e6eefc}
+#rvSendBtn{padding:10px;border-radius:8px;background:linear-gradient(90deg,#0a3d91,#4d91ff);color:#fff;border:0;cursor:pointer}
+.rv-small{font-size:13px;color:#6b7280;margin-top:6px}
+@media(max-width:420px){ #rvChatPanel{width:94vw;right:3vw;left:3vw;bottom:84px} #rvChatBtn{right:12px;bottom:12px} }
+</style>
+
+<div id="rvChatRoot" aria-live="polite">
+  <button id="rvChatBtn" aria-label="Open chat" title="Chat with ResumeVibe">
+    <!-- simple chat bubble SVG -->
+    <svg viewBox="0 0 24 24" width="28" height="28" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2v10z" fill="#fff" opacity="0.95"/>
+      <path d="M8.5 10.5h7M8.5 7.5h7" stroke="#0a3d91" stroke-width="0.6" stroke-linecap="round" stroke-linejoin="round"/>
+    </svg>
+  </button>
+
+  <div id="rvChatPanel" role="dialog" aria-hidden="true" aria-label="ResumeVibe Chat">
+    <header>
+      <div class="rv-avatar" title="ResumeVibe">
+        <!-- avatar: initials SVG (editable) -->
+        <svg width="28" height="28" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <defs><linearGradient id="gA" x1="0" x2="1"><stop offset="0" stop-color="#0a3d91"/><stop offset="1" stop-color="#4d91ff"/></linearGradient></defs>
+          <circle cx="50" cy="50" r="48" fill="url(#gA)"/>
+          <text x="50" y="62" font-family="Poppins, sans-serif" font-weight="800" font-size="40" text-anchor="middle" fill="#fff">RV</text>
+        </svg>
+      </div>
+
+      <div style="font-weight:800">ResumeVibe — Quick Help</div>
+
+      <div class="rv-lang" role="radiogroup" aria-label="Language">
+        <button data-lang="en" title="English">EN</button>
+        <button data-lang="hi" title="Hindi">HI</button>
+        <button data-lang="mr" title="Marathi">MR</button>
+      </div>
+
+      <button id="rvClosePanel" style="margin-left:8px;background:transparent;border:0;color:rgba(255,255,255,0.95);font-weight:800;cursor:pointer" aria-label="Close">✕</button>
+    </header>
+
+    <div class="rv-body" id="rvBody" aria-live="polite">
+      <!-- messages injected here -->
+    </div>
+
+    <div id="rvFooter">
+      <input id="rvSendInput" placeholder="Type or choose an option..." aria-label="Chat input">
+      <button id="rvSendBtn" aria-label="Send">Send</button>
+    </div>
+  </div>
+</div>
+
+<script>
+/* ResumeVibe Chatbot — Avatar + Auto-popup + Multi-language support
+   Paste this block before </body>. Delete any previous rvChatRoot block first. */
+
+// ---- multi-language strings ----
+const LANG = {
+  en: {
+    welcome: "👋 Hello! Welcome to ResumeVibe Studio — your quick digital assistant. How can I help you today?",
+    options: ["Resume Services","Form Filling","Typing / Assignment","Samples","Pricing","Talk to Agent"],
+    resume_q: "Great! Which type of resume are you looking for?",
+    resume_options: ["Simple Resume — ₹149","Professional Resume — ₹249","ATS Resume — ₹399","Creative Resume"],
+    collect_resume: "Please share: 1) Your Name 2) Phone Number 3) Deadline (e.g. 1 hour / today) 4) Any notes (optional)",
+    thank_you: "Thanks — open WhatsApp to send this order.",
+    invalid_phone: "Please enter a valid 10-digit phone number.",
+    samples_text: "Sample Links:\n• Modern Clean: samples/sample1.html\n• ATS Friendly: samples/sample2.html\n• Creative Two Column: samples/sample3.html",
+    pricing_text: "Pricing: Simple ₹149 | Professional ₹249 | ATS ₹399 | Cover Letter ₹99\nOffer: ₹50 OFF on Simple Resume (Code: RV50)"
+  },
+  hi: {
+    welcome: "👋 नमस्ते! ResumeVibe Studio में आपका स्वागत है — मैं आपकी त्वरित सहायक हूँ। मैं कैसे मदद करूँ?",
+    options: ["रिज़्यूमे सेवाएँ","फॉर्म भरना","टाइपिंग / असाइनमेंट","नमूने","कीमतें","एजेंट से बात"],
+    resume_q: "किस प्रकार का रिज़्यूमे चाहिए?",
+    resume_options: ["सादा रिज़्यूमे — ₹149","प्रोफेशनल रिज़्यूमे — ₹249","ATS रिज़्यूमे — ₹399","क्रिएटिव रिज़्यूमे"],
+    collect_resume: "कृपया दें: 1) नाम 2) फोन नंबर 3) डेडलाइन (उदा. 1 घंटा/आज) 4) नोट (वैकल्पिक)",
+    thank_you: "धन्यवाद — कृपया ऑर्डर भेजने के लिए WhatsApp खोलें।",
+    invalid_phone: "कृपया 10 अंकों का सही फोन नंबर डालें।",
+    samples_text: "नमूने लिंक:\n• Modern Clean: samples/sample1.html\n• ATS Friendly: samples/sample2.html\n• Creative Two Column: samples/sample3.html",
+    pricing_text: "कीमतें: Simple ₹149 | Professional ₹249 | ATS ₹399 | Cover Letter ₹99\nऑफ़र: ₹50 छूट (कोड: RV50)"
+  },
+  mr: {
+    welcome: "👋 नमस्कार! ResumeVibe Studio मध्ये आपले स्वागत आहे — मी तुमची मदत कशी करू?",
+    options: ["रिज्युमे सेवा","फॉर्म भरणे","टायपिंग / असाइनमेंट","नमुने","किंमती","एजंटशी बोला"],
+    resume_q: "तुम्हाला कोणत्या प्रकारचे रिज्यूमे हवे?",
+    resume_options: ["सिंपल रिज्यूमे — ₹149","प्रोफेशनल रिज्यूमे — ₹249","ATS रिज्यूमे — ₹399","क्रिएटिव्ह रिज्यूमे"],
+    collect_resume: "कृपया पाठवा: 1) नाव 2) फोन नंबर 3) डेडलाइन 4) टीप (ऐच्छिक)",
+    thank_you: "धन्यवाद — ऑर्डर पाठवण्यासाठी WhatsApp उघडा.",
+    invalid_phone: "कृपया 10 अंकी वैध फोन नंबर टाका.",
+    samples_text: "नमुने:\n• Modern Clean: samples/sample1.html\n• ATS Friendly: samples/sample2.html\n• Creative Two Column: samples/sample3.html",
+    pricing_text: "किंमती: Simple ₹149 | Professional ₹249 | ATS ₹399 | Cover Letter ₹99\nऑफर: ₹50 सूट (कोड: RV50)"
+  }
+};
+
+// ---- DOM refs ----
+const rvBtn = document.getElementById('rvChatBtn');
+const rvPanel = document.getElementById('rvChatPanel');
+const rvBody = document.getElementById('rvBody');
+const rvSendInput = document.getElementById('rvSendInput');
+const rvSendBtn = document.getElementById('rvSendBtn');
+const rvClosePanel = document.getElementById('rvClosePanel');
+const langButtons = document.querySelectorAll('.rv-lang button');
+
+let state = { lang: localStorage.getItem('rv_lang') || 'en', collected: {}, context:'welcome' };
+
+// helper: render bot message
+function bot(text){
+  const d = document.createElement('div'); d.className='rv-msg bot'; d.textContent = text; rvBody.appendChild(d); rvBody.scrollTop = rvBody.scrollHeight;
+}
+// helper: render user message
+function user(text){ const d = document.createElement('div'); d.className='rv-msg user'; d.textContent = text; rvBody.appendChild(d); rvBody.scrollTop = rvBody.scrollHeight; }
+
+// initial language setup UI
+function setLangUI(){
+  langButtons.forEach(b=>{ b.style.opacity = b.dataset.lang === state.lang ? '1' : '0.6'; });
+}
+langButtons.forEach(btn=>{
+  const l = btn.getAttribute('data-lang') || btn.dataset.lang || btn.textContent.toLowerCase();
+  btn.dataset.lang = btn.dataset.lang || btn.textContent.toLowerCase();
+  btn.addEventListener('click', ()=>{
+    state.lang = btn.dataset.lang;
+    localStorage.setItem('rv_lang', state.lang);
+    // clear chat & show welcome again in selected language
+    rvBody.innerHTML='';
+    setLangUI();
+    showWelcome(true);
+  });
+});
+setLangUI();
+
+// render welcome flow (option buttons)
+function showWelcome(auto=false){
+  const S = LANG[state.lang];
+  if(auto){
+    // if auto open, show a shorter greeting then options
+    bot(S.welcome);
+  } else {
+    bot(S.welcome);
+  }
+  // render option buttons
+  const actions = LANG[state.lang].options;
+  const wrap = document.createElement('div'); wrap.className='rv-actions';
+  actions.forEach(label=>{
+    const btn = document.createElement('button'); btn.className='rv-btn';
+    btn.textContent = label;
+    // map label to actions (simple mapping):
+    btn.addEventListener('click', ()=>{ user(label); routeText(label); });
+    wrap.appendChild(btn);
+  });
+  rvBody.appendChild(wrap);
+  rvBody.scrollTop = rvBody.scrollHeight;
+}
+
+// route typed text or button label to actions
+function routeText(txt){
+  const lower = txt.toString().toLowerCase();
+  const S = LANG[state.lang];
+  if(lower.includes('resume') || lower.includes('रिज') || lower.includes('रिजन')) return askResume();
+  if(lower.includes('form') || lower.includes('फॉर्म') || lower.includes('फॉर्म')) return askForm();
+  if(lower.includes('typing') || lower.includes('टाइप') || lower.includes('टायप')) return askTyping();
+  if(lower.includes('sample') || lower.includes('नमू') || lower.includes('नमून')) return showSamples();
+  if(lower.includes('price') || lower.includes('कीमत') || lower.includes('किंमत')) return showPricing();
+  if(lower.includes('agent') || lower.includes('एज') || lower.includes('मानव')) return sendToAgent();
+  // fallback
+  bot(S.welcome);
+  showWelcome();
+}
+
+// Ask resume details flow
+function askResume(){
+  const S = LANG[state.lang];
+  bot(S.resume_q);
+  const wrap = document.createElement('div'); wrap.className='rv-actions';
+  (S.resume_options || []).forEach(opt=>{
+    const b = document.createElement('button'); b.className='rv-btn';
+    b.textContent = opt;
+    b.addEventListener('click', ()=>{ user(opt); state.collected.service = opt; collectFields(['name','phone','deadline','note']); });
+    wrap.appendChild(b);
+  });
+  rvBody.appendChild(wrap);
+  rvBody.scrollTop = rvBody.scrollHeight;
+}
+
+// Ask form flow
+function askForm(){ const S = LANG[state.lang]; bot(S.collect_resume); collectFields(['name','phone','form_name','deadline','note']); }
+
+// Ask typing flow
+function askTyping(){ const S = LANG[state.lang]; bot(S.collect_resume); collectFields(['name','phone','pages','deadline']); }
+
+// Show samples
+function showSamples(){ const S = LANG[state.lang]; bot(S.samples_text); }
+
+// Show pricing
+function showPricing(){ const S = LANG[state.lang]; bot(S.pricing_text); }
+
+// send to human agent (whatsapp)
+function sendToAgent(){
+  const S = LANG[state.lang];
+  bot(S.thank_you);
+  const url = `https://wa.me/917039840579?text=${encodeURIComponent('Hello, I need assistance')}`;
+  setTimeout(()=>window.open(url,'_blank'),600);
+}
+
+// collect fields UI
+function collectFields(fields){
+  const container = document.createElement('div'); container.style.marginTop='8px';
+  fields.forEach(f=>{
+    const label = document.createElement('div'); label.className='rv-small'; label.textContent = f.charAt(0).toUpperCase()+f.slice(1);
+    const input = document.createElement('input'); input.className='rv-input'; input.dataset.field = f;
+    input.placeholder = f==='phone' ? 'Enter 10-digit phone' : ('Enter '+f);
+    container.appendChild(label); container.appendChild(input);
+  });
+  const submit = document.createElement('button'); submit.className='rv-btn primary'; submit.textContent='Submit'; submit.style.marginTop='8px';
+  submit.addEventListener('click', ()=>{
+    const inputs = container.querySelectorAll('input, textarea');
+    inputs.forEach(i=>{ const k=i.dataset.field; if(k) state.collected[k]=i.value.trim(); });
+    // phone validation if present
+    if(fields.includes('phone')){
+      const p = state.collected.phone || '';
+      if(!/^\d{10}$/.test(p)){ bot(LANG[state.lang].invalid_phone); return; }
+    }
+    // show collected values as user messages
+    Object.keys(state.collected).forEach(k=>{ user(`${k}: ${state.collected[k]}`); });
+    // final confirmation message and WhatsApp link
+    const svc = state.collected.service || 'Service';
+    const msg = `Hello, I want ${svc}. Name: ${state.collected.name || ''}. Phone: ${state.collected.phone || ''}. Deadline: ${state.collected.deadline || ''}. Note: ${state.collected.note || ''}`;
+    bot(LANG[state.lang].thank_you);
+    const wa = `https://wa.me/917039840579?text=${encodeURIComponent(msg)}`;
+    setTimeout(()=>window.open(wa,'_blank'),700);
+  });
+  container.appendChild(submit);
+  rvBody.appendChild(container); rvBody.scrollTop = rvBody.scrollHeight;
+}
+
+// typed input handling
+rvSendBtn.addEventListener('click', ()=>{ const txt = rvSendInput.value.trim(); if(!txt) return; user(txt); rvSendInput.value=''; routeText(txt); });
+rvSendInput.addEventListener('keypress',(e)=>{ if(e.key==='Enter'){ e.preventDefault(); rvSendBtn.click(); }});
+
+// open/close panel
+rvBtn.addEventListener('click', ()=>{ const open = rvPanel.classList.toggle('show'); rvPanel.setAttribute('aria-hidden', open ? 'false' : 'true'); if(open && rvBody.children.length===0){ showWelcome(); }});
+rvClosePanel.addEventListener('click', ()=>{ rvPanel.classList.remove('show'); rvPanel.setAttribute('aria-hidden','true'); });
+
+// language buttons: set dataset and update UI
+document.querySelectorAll('.rv-lang button').forEach(btn=>{
+  const code = btn.dataset.lang || btn.textContent.toLowerCase();
+  btn.dataset.lang = code;
+});
+function updateLangButtons(){ document.querySelectorAll('.rv-lang button').forEach(b=>{ b.style.opacity = (b.dataset.lang===state.lang) ? '1' : '0.6'; }); }
+document.querySelectorAll('.rv-lang button').forEach(b=> b.addEventListener('click', ()=>{ state.lang = b.dataset.lang; localStorage.setItem('rv_lang', state.lang); rvBody.innerHTML=''; updateLangButtons(); showWelcome(); }));
+
+updateLangButtons();
+
+// ---------------- Welcome popup auto-open (once per session) ----------------
+(function autoOpen(){
+  // only auto-open if not seen in this tab/session
+  if(sessionStorage.getItem('rv_chat_auto_shown')) return;
+  sessionStorage.setItem('rv_chat_auto_shown','1');
+  // open after 5 seconds
+  setTimeout(()=>{ rvPanel.classList.add('show'); rvPanel.setAttribute('aria-hidden','false'); showWelcome(true); setTimeout(()=>{ rvSendInput.focus(); },400); }, 5000);
+})();
+
+// Accessibility: focus input when opened
+const obs = new MutationObserver(()=>{ if(rvPanel.classList.contains('show')) setTimeout(()=>rvSendInput.focus(),300); });
+obs.observe(rvPanel,{attributes:true,attributeFilter:['class']});
+
+</script>
+<!-- END: ResumeVibe Chatbot -->
+
 
 </body>
 </html>
