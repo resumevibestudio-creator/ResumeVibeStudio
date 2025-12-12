@@ -365,19 +365,46 @@ header, .hero .hero-title, .section h2 {
 </div>
 
 <script>
-/* Dark Mode */
-const themeToggle = document.getElementById('themeToggle');
-const body = document.body;
-function applyTheme(){ if(localStorage.getItem('rv_dark')==='1'){ body.classList.add('dark'); themeToggle.textContent='Light'; } else { body.classList.remove('dark'); themeToggle.textContent='Dark'; } }
-applyTheme();
-themeToggle.addEventListener('click', ()=>{ const isDark = body.classList.toggle('dark'); localStorage.setItem('rv_dark', isDark ? '1' : '0'); themeToggle.textContent = isDark ? 'Light' : 'Dark'; });
+/* === Heading & Dark-mode color fixes === */
 
-/* Reveal Animations */
-const io = new IntersectionObserver((entries,observer)=>{ entries.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add('reveal'); observer.unobserve(e.target); } }); },{threshold:0.15});
-window.addEventListener('load', ()=>{ document.querySelector('.hero-title').classList.add('reveal'); document.querySelector('.hero-sub').classList.add('reveal'); document.querySelectorAll('.card, .sample-card, .review, .faq-item').forEach(el=>io.observe(el)); });
+/* Always make main headings white over the hero */
+.hero .hero-title,
+.hero .hero-sub {
+  color: #ffffff !important;
+}
 
-/* Smooth Scroll */
-document.querySelectorAll('a[href^="#"]').forEach(a=>{ a.addEventListener('click', e=>{ const id = a.getAttribute('href').replace('#',''); const el = document.getElementById(id); if(el){ e.preventDefault(); const top = el.getBoundingClientRect().top + window.scrollY - 70; window.scrollTo({top,behavior:'smooth'}); } }); });
+/* Section headings white for dark/hero contrast */
+.section h2 {
+  color: #ffffff !important; /* white */
+  text-shadow: 0 2px 8px rgba(0,0,0,0.15);
+}
+
+/* Header brand & nav should remain bright on colored header */
+header .brand,
+header .tagline,
+header nav a {
+  color: #fff !important;
+}
+
+/* If your default page background is light but you want white headings there too,
+   limit white headings only where background is dark (optional): */
+.hero + .section .section h2 { color: #0a3d91 !important; } /* leave as is for normal sections */
+
+/* DARK mode styling (when body.dark class exists) */
+body.dark {
+  background: #050506 !important;
+  color: #e8d9b0 !important;
+}
+
+/* Ensure headings stay visible in dark mode */
+body.dark .section h2,
+body.dark header .brand,
+body.dark header nav a {
+  color: #fff !important;
+}
+
+/* Small tweak to ensure theme button stays readable */
+#themeToggle { color: #fff !important; border-color: rgba(255,255,255,0.14) !important; }
 
 /* UPI Click Alert (Desktop) */
 document.querySelectorAll('.pay-btn').forEach(btn=>{ btn.addEventListener('click', ()=>{ setTimeout(()=>{ if(!/Mobi|Android/i.test(navigator.userAgent)){ alert("If UPI didn't open, please order via WhatsApp on your phone."); } },700); }); });
