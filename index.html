@@ -2,154 +2,94 @@
 <html lang="en">
 <head>
 <meta charset="utf-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
 <title>ResumeVibe Studio — Your Trusted Partner for Online Services</title>
 
-<!-- SEO -->
-<meta name="description" content="ResumeVibe Studio — Premium resume creation, ATS resume, typing work, government & college form filling. Fast delivery & student-friendly.">
-<meta name="keywords" content="resume, ATS resume, form filling, typing service, Mumbai resume maker, ResumeVibe Studio">
-<link rel="canonical" href="https://resumevibestudio-creator.github.io/ResumeVibeStudio/">
-
-<meta property="og:title" content="ResumeVibe Studio — Resume & Digital Services">
-<meta property="og:description" content="Professional resume creation, typing, form filling & online services. Fast, affordable & accurate.">
-<meta property="og:image" content="https://resumevibestudio-creator.github.io/ResumeVibeStudio/poster-share.png">
-<meta property="og:url" content="https://resumevibestudio-creator.github.io/ResumeVibeStudio/">
-<meta property="og:type" content="website">
-
-<meta name="twitter:card" content="summary_large_image">
-
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "LocalBusiness",
-  "name": "ResumeVibe Studio",
-  "description": "Resume creation, ATS resume, typing work, online form filling, admission forms & digital services.",
-  "image": "https://resumevibestudio-creator.github.io/ResumeVibeStudio/poster-share.png",
-  "address": { "@type": "PostalAddress", "addressLocality": "Mumbai", "addressCountry": "IN" },
-  "telephone": "+917039840579",
-  "url": "https://resumevibestudio-creator.github.io/ResumeVibeStudio/"
-}
-</script>
-
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<meta name="description" content="ResumeVibe Studio — Premium resume creation, ATS resume, typing work, form filling & online services.">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
 
 <style>
 :root{
-  --blue:#0a3d91;
-  --accent:#4d91ff;
-  --gold:#d4af37;
-  --bg:#f6f8fb;
-  --card:#ffffff;
-  --dark:#050506;
-  --muted:#6b7280;
+  --blue:#0a3d91; --accent:#4d91ff; --gold:#d4af37; --bg:#f6f8fb; --card:#fff; --muted:#6b7280;
+  --wh: #fff;
 }
+*{box-sizing:border-box}
+html,body{height:100%}
+body{margin:0;font-family:'Poppins',sans-serif;background:var(--bg);color:#111;scroll-behavior:smooth}
 
-/* BASIC */
-body{
-  margin:0;
-  font-family:'Poppins',sans-serif;
-  background:var(--bg);
-  color:#111;
-  scroll-behavior:smooth;
-}
+/* header */
+header{position:sticky;top:0;z-index:8000;display:flex;align-items:center;justify-content:space-between;padding:12px 22px;background:linear-gradient(90deg,var(--blue),var(--accent));color:var(--wh);box-shadow:0 8px 30px rgba(10,13,30,0.12)}
+.brand{font-weight:800;font-size:20px}
+.tagline{font-size:12px;opacity:.9}
+nav a{color:var(--wh);text-decoration:none;margin-left:14px;font-weight:600}
+#themeToggle{background:transparent;border:1px solid rgba(255,255,255,0.12);color:var(--wh);padding:8px 10px;border-radius:8px;cursor:pointer}
 
-/* HEADER */
-header{
-  position:sticky; top:0;
-  background:linear-gradient(90deg,var(--blue),var(--accent));
-  padding:12px 18px;
-  display:flex; justify-content:space-between; align-items:center;
-  color:white; z-index:6000;
-}
-.brand{font-size:20px;font-weight:800;}
-.tagline{font-size:12px;opacity:0.85;}
-nav a{color:white;text-decoration:none;margin-left:14px;font-weight:600;}
-#themeToggle{
-  background:transparent; color:white;
-  border:1px solid rgba(255,255,255,0.3);
-  padding:7px 10px; border-radius:8px; cursor:pointer;
-}
+/* hero video */
+.hero{position:relative;height:56vh;min-height:320px;display:flex;align-items:center;justify-content:center;color:#fff;text-align:center;overflow:hidden}
+.hero video{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);min-width:100%;min-height:100%;object-fit:cover;filter:brightness(.45) saturate(1.02)}
+.hero .content{position:relative;z-index:2;padding:28px}
+.hero-title{font-size:44px;margin:0 0 8px;line-height:1.02}
+.hero-sub{max-width:920px;margin:0 auto}
 
-/* HERO */
-.hero{
-  padding:90px 20px; text-align:center;
-  background:linear-gradient(135deg,#0a3d91,#1e90ff);
-  color:white;
-}
-.hero-title{font-size:42px;margin-bottom:10px;}
-.hero-sub{max-width:720px;margin:0 auto 18px;}
-.badges{display:flex; justify-content:center; gap:10px;}
-.badge{background:white;color:var(--blue);padding:8px 14px;border-radius:20px;font-weight:700;}
+/* badges */
+.badges{display:flex;gap:10px;justify-content:center;margin-top:18px;flex-wrap:wrap}
+.badge{background:var(--wh);color:var(--blue);padding:8px 14px;border-radius:22px;font-weight:700;box-shadow:0 6px 18px rgba(0,0,0,0.06)}
 
-/* SECTIONS */
-.section{
-  max-width:1200px;
-  margin:auto;
-  padding:40px 20px;
-}
-.section h2{
-  text-align:center;
-  font-size:30px;
-  margin-bottom:20px;
-  color:var(--gold); /* GOLD headings */
-}
+/* sections */
+.section{max-width:1200px;margin:42px auto;padding:0 18px}
+.section h2{text-align:center;color:var(--gold);font-size:30px;margin-bottom:18px}
+.muted{color:var(--muted);text-align:center}
 
-/* CARDS */
-.grid{
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
-  gap:20px;
-}
-.card{
-  background:var(--card);
-  padding:20px;
-  border-radius:12px;
-  box-shadow:0 10px 25px rgba(0,0,0,0.07);
-  text-align:center;
-}
-.icon{font-size:34px;}
-.title{font-size:18px;font-weight:700;color:var(--blue);}
-.price{font-weight:800;color:#163a8a;margin:8px 0;}
-.order-btn{
-  display:inline-block;background:var(--accent);color:white;
-  padding:10px 14px;border-radius:8px;text-decoration:none;
-  margin-top:10px;
-}
+/* grid & cards */
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:20px}
+.card{background:var(--card);padding:24px;border-radius:14px;box-shadow:0 14px 30px rgba(10,13,30,0.06);text-align:center;transition:transform .28s,box-shadow .28s,border-color .28s;cursor:default;position:relative;overflow:hidden}
+.card:hover{transform:translateY(-8px)}
+.card .icon{font-size:40px;margin-bottom:8px}
+.card .title{font-weight:700;color:var(--blue);font-size:18px}
+.card .price{font-weight:800;color:#163a8a;margin:10px 0}
+.pay-btn{background:#071428;color:var(--gold);padding:8px 12px;border-radius:10px;text-decoration:none;display:inline-block;font-weight:800;border:0}
+.order-btn{background:var(--accent);color:#fff;padding:10px 12px;border-radius:10px;text-decoration:none;display:inline-block;font-weight:700;margin-top:10px}
+.small-muted{color:var(--muted);margin-top:6px;font-size:13px}
 
-/* FLOATING BUTTONS (Left Side) */
-.floating{
-  position:fixed; left:18px; bottom:18px;
-  display:flex; flex-direction:column; gap:12px;
-  z-index:999;
-}
-.floating a{
-  display:inline-flex; align-items:center; gap:8px;
-  padding:10px 14px; border-radius:28px;
-  text-decoration:none; color:white; font-size:14px;
-  white-space:nowrap;
-}
-.whatsapp{background:linear-gradient(45deg,#19c37d,#1bd86f);}
-.call{background:#0a3d91;}
+/* selection highlight when clicked */
+.card.selected{outline:3px solid rgba(212,175,55,0.18);box-shadow:0 26px 60px rgba(10,13,30,0.12);transform:translateY(-12px) scale(1.02)}
 
-/* CHATBOT (Right Side) */
-#rvChatRoot{
-  position:fixed;
-  right:18px;
-  bottom:18px;
-  z-index:9999;
-}
+/* floating left buttons */
+.floating{position:fixed;left:18px;bottom:18px;display:flex;flex-direction:column;gap:12px;z-index:999}
+.floating a{display:inline-flex;align-items:center;gap:10px;padding:10px 14px;border-radius:28px;color:#fff;text-decoration:none;font-weight:700;box-shadow:0 10px 30px rgba(10,13,30,0.08)}
+.whatsapp{background:linear-gradient(45deg,#19c37d,#1bd86f)}
+.call{background:var(--blue)}
 
-/* DARK MODE */
-body.dark{
-  background:var(--dark);
-  color:var(--gold);
-}
-body.dark header{background:#000;}
-body.dark .card{background:#0b0b0c;color:var(--gold);}
-body.dark .section h2{color:var(--gold);}
+/* chatbot (right) */
+#rvChatRoot{position:fixed;right:18px;bottom:18px;z-index:11000}
+#rvChatBtn{width:64px;height:64px;border-radius:999px;background:linear-gradient(45deg,#19c37d,#1bd86f);color:#fff;display:flex;align-items:center;justify-content:center;font-weight:800;cursor:pointer;border:0;box-shadow:0 18px 48px rgba(27,216,111,0.14)}
+#rvChatPanel{width:360px;max-width:92vw;border-radius:12px;overflow:hidden;box-shadow:0 30px 80px rgba(10,13,30,0.18);display:none;flex-direction:column;background:#fff}
+#rvChatPanel.show{display:flex}
+#rvChatPanel header{background:linear-gradient(90deg,#0a3d91,#4d91ff);color:#fff;padding:10px 12px;display:flex;align-items:center;gap:10px}
+#rvChatPanel .rv-body{padding:12px;max-height:52vh;overflow:auto;background:linear-gradient(180deg,#fbfdff,#fff)}
+.rv-msg{margin:6px 0;padding:10px 12px;border-radius:10px;display:inline-block;max-width:84%}
+.rv-msg.bot{background:#f1f6ff;color:#072;align-self:flex-start}
+.rv-msg.user{background:#0a3d91;color:#fff;align-self:flex-end}
+#rvFooter{display:flex;gap:8px;padding:10px;border-top:1px solid #f1f5ff;align-items:center;background:#fff}
+#rvSendInput{flex:1;padding:10px;border-radius:10px;border:1px solid #e6eefc}
+#rvSendBtn{padding:10px;border-radius:8px;background:linear-gradient(90deg,#0a3d91,#4d91ff);color:#fff;border:0;cursor:pointer}
+
+/* reveal animation helpers */
+.fade-up{opacity:0;transform:translateY(18px);transition:all .6s ease}
+.fade-up.reveal{opacity:1;transform:none}
+.hero-title, .hero-sub{opacity:0;transform:translateY(18px);animation:heroIn .9s ease .12s forwards}
+@keyframes heroIn{to{opacity:1;transform:none}}
+
+/* dark */
+body.dark{background:#050506;color:var(--gold)}
+body.dark header{background:#000}
+body.dark .card{background:#0b0b0c;color:var(--gold)}
+body.dark .card .title{color:var(--gold)}
+body.dark .rv-msg.bot{background:#0b1a2b;color:var(--gold)}
+body.dark #rvChatPanel{background:#08101a;color:var(--gold)}
+@media(max-width:720px){.hero{height:auto;padding:64px 14px}.hero-title{font-size:28px}}
 </style>
 </head>
-
 <body>
 
 <header>
@@ -157,123 +97,286 @@ body.dark .section h2{color:var(--gold);}
     <div class="brand">ResumeVibe Studio</div>
     <div class="tagline">Your Trusted Partner for Online Services</div>
   </div>
-  <nav>
-    <a href="#services">Services</a>
-    <a href="#samples">Samples</a>
-    <a href="#reviews">Reviews</a>
-    <a href="#faq">FAQ</a>
-    <a href="#contact">Contact</a>
-  </nav>
-  <button id="themeToggle">Dark</button>
+
+  <div style="display:flex;align-items:center;gap:12px">
+    <nav>
+      <a href="#services">Services</a>
+      <a href="#samples">Samples</a>
+      <a href="#reviews">Reviews</a>
+      <a href="#faq">FAQ</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <div class="controls">
+      <button id="themeToggle" title="Toggle dark mode">Dark</button>
+    </div>
+  </div>
 </header>
 
 <section class="hero">
-  <h1 class="hero-title">Premium Resumes & Fast Digital Services</h1>
-  <p class="hero-sub">We build professional resumes, fill forms, and help with all online tasks. Fast, accurate & student-friendly.</p>
+  <!-- sample video; replace with your own if you want -->
+  <video autoplay muted loop playsinline>
+    <source src="https://cdn.coverr.co/videos/coverr-desk-typing-1571245162632?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9" type="video/mp4">
+  </video>
 
-  <div class="badges">
-    <div class="badge">⚡ Fast Delivery</div>
-    <div class="badge">🎓 Student Friendly</div>
-    <div class="badge">✔ 100% Accuracy</div>
+  <div class="content">
+    <h1 class="hero-title">Premium Resumes & Fast Digital Services</h1>
+    <p class="hero-sub">We build professional resumes, fill forms, and handle online tasks — fast, accurate & student-friendly.</p>
+    <div class="badges">
+      <div class="badge">⚡ Fast Delivery</div>
+      <div class="badge">🎓 Student Friendly</div>
+      <div class="badge">✔ 100% Accuracy</div>
+    </div>
   </div>
 </section>
 
 <section id="services" class="section">
   <h2>Our Services</h2>
+  <p class="muted">Resume services, typing, form filling & online assistance — order via WhatsApp or pay instantly.</p>
 
   <div class="grid">
-    <div class="card">
+    <!-- each card includes pay and order -->
+    <div class="card fade-up" data-service="Simple Resume — ₹149">
       <div class="icon">📝</div>
       <div class="title">Simple Resume</div>
       <div class="price">₹149</div>
-      <a class="order-btn" href="https://wa.me/917039840579">Order Now</a>
+      <div class="paybox">
+        <a class="pay-btn" data-amount="149" href="upi://pay?pa=9930045850@ptyes&pn=ResumeVibeStudio&am=149&cu=INR">Pay ₹149</a>
+      </div>
+      <a class="order-btn" href="https://wa.me/917039840579?text=I%20want%20Simple%20Resume%20₹149">Order Now</a>
     </div>
 
-    <div class="card">
+    <div class="card fade-up" data-service="Professional Resume — ₹249">
       <div class="icon">💼</div>
       <div class="title">Professional Resume</div>
       <div class="price">₹249</div>
-      <a class="order-btn" href="https://wa.me/917039840579">Order Now</a>
+      <div class="paybox">
+        <a class="pay-btn" data-amount="249" href="upi://pay?pa=9930045850@ptyes&pn=ResumeVibeStudio&am=249&cu=INR">Pay ₹249</a>
+      </div>
+      <a class="order-btn" href="https://wa.me/917039840579?text=I%20want%20Professional%20Resume%20₹249">Order Now</a>
     </div>
 
-    <div class="card">
+    <div class="card fade-up" data-service="ATS Resume — ₹399">
       <div class="icon">🎯</div>
       <div class="title">ATS Resume</div>
       <div class="price">₹399</div>
-      <a class="order-btn" href="https://wa.me/917039840579">Order Now</a>
+      <div class="paybox">
+        <a class="pay-btn" data-amount="399" href="upi://pay?pa=9930045850@ptyes&pn=ResumeVibeStudio&am=399&cu=INR">Pay ₹399</a>
+      </div>
+      <a class="order-btn" href="https://wa.me/917039840579?text=I%20want%20ATS%20Resume%20₹399">Order Now</a>
+    </div>
+
+    <div class="card fade-up" data-service="Cover Letter — ₹99">
+      <div class="icon">✉️</div>
+      <div class="title">Cover Letter</div>
+      <div class="price">₹99</div>
+      <div class="paybox">
+        <a class="pay-btn" data-amount="99" href="upi://pay?pa=9930045850@ptyes&pn=ResumeVibeStudio&am=99&cu=INR">Pay ₹99</a>
+      </div>
+      <a class="order-btn" href="https://wa.me/917039840579?text=I%20want%20Cover%20Letter%20₹99">Order Now</a>
     </div>
   </div>
 </section>
 
-<section id="samples" class="section">
-  <h2>Resume Samples</h2>
+<!-- other services -->
+<section class="section">
+  <h2>Other Services</h2>
   <div class="grid">
-    <div class="card"><h3>Modern Clean</h3></div>
-    <div class="card"><h3>ATS Friendly</h3></div>
-    <div class="card"><h3>Creative Two-Column</h3></div>
+    <div class="card fade-up" data-service="Form Filling">
+      <div class="icon">🗂️</div>
+      <div class="title">Government & Exam Form Filling</div>
+      <div class="price">Charges Vary</div>
+      <div class="small-muted">Official fees + form charges apply</div>
+      <a class="order-btn" href="https://wa.me/917039840579?text=I%20need%20Form%20Filling">Order Now</a>
+    </div>
+
+    <div class="card fade-up" data-service="Admission Forms">
+      <div class="icon">🏫</div>
+      <div class="title">College / School Admission Forms</div>
+      <div class="price">Charges Vary</div>
+      <a class="order-btn" href="https://wa.me/917039840579?text=I%20need%20Admission%20Form%20Filling">Order Now</a>
+    </div>
+
+    <div class="card fade-up" data-service="Assignment Typing">
+      <div class="icon">⌨️</div>
+      <div class="title">Assignment Typing</div>
+      <div class="price">₹10 / page</div>
+      <a class="order-btn" href="https://wa.me/917039840579?text=I%20need%20Assignment%20Typing">Order Now</a>
+    </div>
   </div>
 </section>
 
-<section id="reviews" class="section">
-  <h2>Customer Reviews</h2>
-  <div class="grid">
-    <div class="card"><strong>Priya S.</strong><p>Super fast delivery!</p></div>
-    <div class="card"><strong>Rohit K.</strong><p>Very accurate form filling.</p></div>
-    <div class="card"><strong>Meera J.</strong><p>Affordable and professional.</p></div>
-  </div>
-</section>
-
-<section id="faq" class="section">
-  <h2>FAQ</h2>
-  <div class="grid">
-    <div class="card"><strong>How fast?</strong><p>15–30 minutes.</p></div>
-    <div class="card"><strong>Payments?</strong><p>UPI or WhatsApp.</p></div>
-    <div class="card"><strong>Edits?</strong><p>One free edit.</p></div>
+<!-- booking -->
+<section id="booking" class="section">
+  <h2>Book a Service</h2>
+  <p class="muted">Fill details below — we will message to confirm.</p>
+  <div style="max-width:820px;margin:12px auto;padding:10px">
+    <div style="display:flex;flex-direction:column;gap:10px">
+      <input id="bk_name" placeholder="Your name" style="padding:10px;border-radius:8px;border:1px solid #eee">
+      <input id="bk_phone" placeholder="Phone (10 digits)" style="padding:10px;border-radius:8px;border:1px solid #eee">
+      <select id="bk_service" style="padding:10px;border-radius:8px;border:1px solid #eee">
+        <option>Simple Resume — ₹149</option>
+        <option>Professional Resume — ₹249</option>
+        <option>ATS Resume — ₹399</option>
+        <option>Cover Letter — ₹99</option>
+        <option>Form Filling — Charges Vary</option>
+      </select>
+      <input id="bk_date" type="date" style="padding:10px;border-radius:8px;border:1px solid #eee">
+      <input id="bk_time" type="time" style="padding:10px;border-radius:8px;border:1px solid #eee">
+      <textarea id="bk_note" placeholder="Note (optional)" style="padding:10px;border-radius:8px;border:1px solid #eee"></textarea>
+      <div style="display:flex;gap:8px">
+        <button id="bk_submit" class="order-btn" style="border:none">Send Booking (WhatsApp)</button>
+        <button id="bk_pay" class="pay-btn" style="border:none">Pay Selected</button>
+      </div>
+    </div>
   </div>
 </section>
 
 <section id="contact" class="section">
   <h2>Contact Us</h2>
-  <div style="text-align:center;">
-    <p>📍 Mumbai</p>
-    <p>📞 7039840579 / 9930045850</p>
-    <p>📧 resumevibestudio@gmail.com</p>
+  <div class="contact" style="text-align:center">
+    <div>📍 Mumbai</div>
+    <div>📞 7039840579 / 9930045850</div>
+    <div>📧 resumevibestudio@gmail.com</div>
   </div>
 </section>
 
-<footer style="background:linear-gradient(90deg,var(--blue),var(--accent));padding:20px;text-align:center;color:white;">
-  © 2025 ResumeVibe Studio — All Rights Reserved
-</footer>
+<footer style="background:linear-gradient(90deg,var(--blue),var(--accent));color:#fff;padding:16px;text-align:center">© 2025 ResumeVibe Studio — All Rights Reserved</footer>
 
-<!-- FLOATING BUTTONS LEFT -->
-<div class="floating">
-  <a class="whatsapp" href="https://wa.me/917039840579">💬 WhatsApp</a>
+<!-- floating left (Whatsapp, Call) -->
+<div class="floating" aria-hidden="false">
+  <a class="whatsapp" href="https://wa.me/917039840579" target="_blank">💬 WhatsApp</a>
   <a class="call" href="tel:+917039840579">📞 Call</a>
 </div>
 
-<!-- CHATBOT RIGHT -->
-<div id="rvChatRoot"></div>
+<!-- Chatbot root -->
+<div id="rvChatRoot" aria-live="polite">
+  <button id="rvChatBtn" aria-label="Open chat" title="Chat with ResumeVibe"><span style="font-weight:900">💬</span></button>
 
-<!-- DARK MODE SCRIPT -->
+  <div id="rvChatPanel" role="dialog" aria-hidden="true" aria-label="ResumeVibe Chat">
+    <header>
+      <div style="display:flex;align-items:center;gap:10px">
+        <div style="width:38px;height:38px;border-radius:999px;background:linear-gradient(90deg,#fff,#fff);display:flex;align-items:center;justify-content:center;font-weight:800;color:var(--blue)">RV</div>
+        <div style="font-weight:800;color:#fff">ResumeVibe — Quick Help</div>
+      </div>
+      <div style="margin-left:auto;display:flex;gap:6px">
+        <button data-lang="en" style="background:transparent;border:1px solid rgba(255,255,255,0.18);color:#fff;padding:6px;border-radius:8px;cursor:pointer">EN</button>
+        <button data-lang="hi" style="background:transparent;border:1px solid rgba(255,255,255,0.18);color:#fff;padding:6px;border-radius:8px;cursor:pointer">HI</button>
+      </div>
+      <button id="rvClosePanel" style="background:transparent;border:0;color:#fff;font-weight:800;cursor:pointer;margin-left:8px">✕</button>
+    </header>
+    <div class="rv-body" id="rvBody"></div>
+    <div id="rvFooter">
+      <input id="rvSendInput" placeholder="Type a message..." aria-label="Chat input">
+      <button id="rvSendBtn">Send</button>
+    </div>
+  </div>
+</div>
+
 <script>
+/* ---------- Dark mode ---------- */
 const themeToggle=document.getElementById('themeToggle');
 function applyTheme(){
-  const saved=localStorage.getItem('rv_dark');
-  if(saved==='1' || (!saved && window.matchMedia('(prefers-color-scheme: dark)').matches)){
-    document.body.classList.add('dark');
-    themeToggle.textContent='Light';
-  } else {
-    document.body.classList.remove('dark');
-    themeToggle.textContent='Dark';
-  }
+  const s=localStorage.getItem('rv_dark');
+  if(s==='1'){ document.body.classList.add('dark'); themeToggle.textContent='Light'; } else { document.body.classList.remove('dark'); themeToggle.textContent='Dark'; }
 }
 applyTheme();
-themeToggle.onclick=()=>{
-  const isDark=document.body.classList.toggle('dark');
-  localStorage.setItem('rv_dark',isDark?'1':'0');
-  themeToggle.textContent=isDark?'Light':'Dark';
-};
-</script>
+themeToggle.onclick=()=>{ const now=document.body.classList.toggle('dark'); localStorage.setItem('rv_dark', now?'1':'0'); themeToggle.textContent= now?'Light':'Dark'; };
 
+/* ---------- Reveal animations ---------- */
+(function(){
+  const io=new IntersectionObserver((entries,obs)=>{ entries.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add('reveal'); e.target.classList.remove('fade-up'); obs.unobserve(e.target); } }); }, {threshold:0.12});
+  document.querySelectorAll('.fade-up, .card, .sample-card, .review, .faq-item').forEach(el=>io.observe(el));
+})();
+
+/* ---------- Service card selection animation (click to select) ---------- */
+document.querySelectorAll('.card').forEach(card=>{
+  card.addEventListener('click',()=>{
+    // remove selected from others
+    document.querySelectorAll('.card').forEach(c=>c.classList.remove('selected'));
+    card.classList.add('selected');
+    // small feedback: show toast for selected service
+    showSelectedToast(card.dataset.service || card.querySelector('.title').textContent);
+  });
+});
+function showSelectedToast(text){
+  // create temporary toast
+  let t=document.createElement('div');
+  t.textContent='Selected: '+text;
+  t.style.position='fixed'; t.style.left='50%'; t.style.transform='translateX(-50%)'; t.style.bottom='26px';
+  t.style.background='rgba(10,13,30,0.9)'; t.style.color='#fff'; t.style.padding='10px 14px'; t.style.borderRadius='10px'; t.style.zIndex=12000; t.style.boxShadow='0 10px 30px rgba(0,0,0,0.2)';
+  document.body.appendChild(t);
+  setTimeout(()=>{ t.style.transition='opacity .4s'; t.style.opacity='0'; setTimeout(()=>t.remove(),400); },1300);
+}
+
+/* ---------- UPI pay fallback message (desktop) ---------- */
+document.addEventListener('click', function(e){
+  if(e.target.closest('.pay-btn')){
+    setTimeout(function(){
+      if(!/Mobi|Android/i.test(navigator.userAgent)){
+        alert('If UPI did not open on desktop, please use "Order Now" via WhatsApp on your phone to complete payment.');
+      }
+    },800);
+  }
+});
+
+/* ---------- Booking form handlers ---------- */
+document.getElementById('bk_submit').addEventListener('click', function(){
+  const name=document.getElementById('bk_name').value.trim();
+  const phone=document.getElementById('bk_phone').value.trim();
+  const service=document.getElementById('bk_service').value;
+  const date=document.getElementById('bk_date').value;
+  const time=document.getElementById('bk_time').value;
+  const note=document.getElementById('bk_note').value.trim();
+  if(!name||!phone){ alert('Please enter name and phone'); return; }
+  if(!/^\d{10}$/.test(phone)){ alert('Enter valid 10-digit phone'); return; }
+  const msg=`Booking Request: ${service}. Name: ${name}. Phone: ${phone}. Date: ${date}. Time: ${time}. Note: ${note}`;
+  window.open(`https://wa.me/917039840579?text=${encodeURIComponent(msg)}`,'_blank');
+});
+document.getElementById('bk_pay').addEventListener('click', function(){
+  const service=document.getElementById('bk_service').value;
+  const map={'Simple Resume — ₹149':149,'Professional Resume — ₹249':249,'ATS Resume — ₹399':399,'Cover Letter — ₹99':99};
+  const amt = map[service]||0;
+  if(!amt){ alert('Selected service has variable price — use WhatsApp to confirm and pay.'); return; }
+  window.location.href = `upi://pay?pa=9930045850@ptyes&pn=ResumeVibeStudio&am=${amt}&cu=INR`;
+});
+
+/* ---------- Chatbot (simple multi-language) ---------- */
+const rvBtn=document.getElementById('rvChatBtn');
+const rvPanel=document.getElementById('rvChatPanel');
+const rvBody=document.getElementById('rvBody');
+const rvSendInput=document.getElementById('rvSendInput');
+const rvSendBtn=document.getElementById('rvSendBtn');
+const rvClose=document.getElementById('rvClosePanel');
+
+const LANGS={
+ en:{welcome:"Hello! 👋 How can I help? Try: Resume, Pricing, Samples, Form filling",samples:"Samples: samples/sample1.html, samples/sample2.html",pricing:"Prices: Simple ₹149, Professional ₹249, ATS ₹399"},
+ hi:{welcome:"नमस्ते! कैसे मदद करूँ? उदाहरण: रिज्यूमे, कीमत, नमूने, फॉर्म",samples:"नमूने: samples/sample1.html, samples/sample2.html",pricing:"कीमतें: Simple ₹149, Professional ₹249, ATS ₹399"}
+};
+let lang = localStorage.getItem('rv_lang') || 'en';
+document.querySelectorAll('#rvChatPanel [data-lang]').forEach(b=>b.addEventListener('click',()=>{ lang=b.dataset.lang; localStorage.setItem('rv_lang',lang); }));
+function bot(msg){ const d=document.createElement('div'); d.className='rv-msg bot'; d.textContent=msg; rvBody.appendChild(d); rvBody.scrollTop = rvBody.scrollHeight; }
+function user(msg){ const d=document.createElement('div'); d.className='rv-msg user'; d.textContent=msg; rvBody.appendChild(d); rvBody.scrollTop = rvBody.scrollHeight; }
+
+rvBtn.addEventListener('click', ()=>{ rvPanel.classList.toggle('show'); rvPanel.setAttribute('aria-hidden', rvPanel.classList.contains('show') ? 'false':'true'); if(rvPanel.classList.contains('show') && rvBody.children.length===0) setTimeout(()=>bot(LANGS[lang].welcome),200); });
+rvClose.addEventListener('click', ()=>{ rvPanel.classList.remove('show'); rvPanel.setAttribute('aria-hidden','true'); });
+
+rvSendBtn.addEventListener('click', ()=>{ const txt=rvSendInput.value.trim(); if(!txt) return; user(txt); rvSendInput.value=''; routeChat(txt.toLowerCase()); });
+rvSendInput.addEventListener('keypress', (e)=>{ if(e.key==='Enter'){ e.preventDefault(); rvSendBtn.click(); }});
+
+function routeChat(txt){
+  if(txt.includes('resume')){ bot('We offer: Simple ₹149, Professional ₹249, ATS ₹399. Click Order on the service card to place order.'); return; }
+  if(txt.includes('price')||txt.includes('pricing')||txt.includes('price list')){ bot(LANGS[lang].pricing); return; }
+  if(txt.includes('sample')){ bot(LANGS[lang].samples); return; }
+  if(txt.includes('form')){ bot('We do Government & Exam/Admission form filling. Use Booking to send details or click Order Now.'); return; }
+  bot("Sorry — I didn't get that. Try: 'resume', 'samples', or 'pricing'.");
+}
+
+/* accessibility: focus input when opened */
+const obs=new MutationObserver(()=>{ if(rvPanel.classList.contains('show')) setTimeout(()=>rvSendInput.focus(),250); });
+obs.observe(rvPanel,{attributes:true,attributeFilter:['class']});
+
+/* quick safety: reveal hero/title if hidden */
+try{ document.querySelectorAll('.hero-title,.hero-sub').forEach(el=>{ el.style.opacity='1'; el.style.transform='none'; }); }catch(e){}
+</script>
 </body>
 </html>
