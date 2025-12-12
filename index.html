@@ -32,41 +32,68 @@
   }
   </script>
 
-  <link rel="sitemap" type="application/xml" href="https://resumevibestudio-creator.github.io/ResumeVibeStudio/sitemap.xml">
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
   <style>
     :root{
-      --blue:#0a3d91; --accent:#4d91ff; --gold:#d4af37; --bg:#f6f8fb;
-      --card:#ffffff; --dark:#050506; --muted:#6b7280;
+      --blue:#0a3d91;
+      --accent:#4d91ff;
+      --gold:#d4af37;
+      --bg:#f6f8fb;
+      --card:#ffffff;
+      --dark:#050506;
+      --muted:#6b7280;
+      --radius:14px;
+      --glass: rgba(255,255,255,0.6);
     }
     *{box-sizing:border-box}
     html,body{height:100%}
     body{
-      margin:0; font-family:'Poppins',sans-serif; background:var(--bg); color:#111;
-      -webkit-font-smoothing:antialiased; -moz-osx-font-smoothing:grayscale; scroll-behavior:smooth;
+      margin:0;
+      font-family:'Poppins',sans-serif;
+      background:var(--bg);
+      color:#111;
+      -webkit-font-smoothing:antialiased;
+      -moz-osx-font-smoothing:grayscale;
+      scroll-behavior:smooth;
     }
     a{color:inherit}
 
-    /* Header */
-    .rv-header{position:sticky;top:0;z-index:9999;display:flex;align-items:center;justify-content:space-between;padding:14px 20px;background:linear-gradient(90deg,var(--blue),var(--accent));color:#fff;box-shadow:0 8px 30px rgba(0,0,0,0.18);}
-    .rv-brand{font-weight:800;font-size:22px}
-    .rv-tag{font-size:12px;opacity:.9;margin-top:-3px}
-    .rv-nav{display:flex;gap:16px}
-    .rv-nav a{color:#fff;text-decoration:none;font-weight:600;opacity:.92}
-    .rv-nav a:hover{opacity:1}
-    .rv-controls button{background:transparent;border:1px solid rgba(255,255,255,.3);color:#fff;padding:7px 12px;border-radius:8px;cursor:pointer}
+    /* header */
+    header{
+      position:sticky;top:0;z-index:9999;
+      display:flex;align-items:center;justify-content:space-between;padding:12px 18px;
+      background:linear-gradient(90deg,var(--blue),var(--accent));
+      color:#fff;box-shadow:0 8px 30px rgba(10,13,30,0.12);
+    }
+    .brand{font-weight:800;letter-spacing:.2px;color:#fff}
+    .tagline{font-size:12px;opacity:.95;color:#fff}
+    nav{display:flex;gap:14px;align-items:center}
+    nav a{color:rgba(255,255,255,.95);text-decoration:none;font-weight:600}
+    .controls{display:flex;gap:10px;align-items:center}
+    button#themeToggle{background:transparent;border:1px solid rgba(255,255,255,.12);color:#fff;padding:8px 10px;border-radius:8px;cursor:pointer}
 
-    /* Hero */
-    .hero{padding:100px 20px 80px;text-align:center;color:#fff;position:relative;background:linear-gradient(135deg,#0a3d91,#3e7efc,#1e90ff);overflow:hidden}
-    .floating-shape{position:absolute;width:420px;height:420px;border-radius:50%;background:#fff;filter:blur(80px);opacity:.08;top:-80px;left:-120px}
-    .hero-title{font-size:46px;font-weight:700;margin:0 0 8px;opacity:0;transform:translateY(20px);transition:all .8s}
-    .hero-sub{max-width:820px;margin:0 auto;opacity:0;transform:translateY(20px);transition:all .9s .1s}
+    /* hero */
+    .hero{
+      padding:96px 18px 80px;text-align:center;color:#fff;position:relative;overflow:hidden;
+      background:linear-gradient(135deg,#0a3d91 0%, #3e7efc 40%, #1e90ff 100%);
+    }
+    .hero .floating-shape{position:absolute;width:420px;height:420px;border-radius:50%;filter:blur(80px);opacity:.08;mix-blend-mode:screen;transform:translate(-40%, -30%)}
+    .hero h1{font-size:44px;margin:0 0 10px;line-height:1.02;opacity:0;transform:translateY(14px);transition:all .8s cubic-bezier(.16,.84,.24,1)}
+    .hero p{max-width:880px;margin:0 auto 18px;opacity:0;transform:translateY(12px);transition:all .85s .06s}
+    .hero .cta{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;opacity:0;transform:translateY(14px);transition:all .9s .12s}
+    .btn{padding:12px 18px;border-radius:10px;font-weight:700;text-decoration:none;display:inline-block;box-shadow:0 12px 30px rgba(10,13,30,0.14)}
+    .btn-primary{background:var(--gold);color:#0b0b0b}
+    .btn-outline{background:transparent;border:1px solid rgba(255,255,255,.16);color:#fff}
+
+    .badges{display:flex;gap:10px;justify-content:center;margin-top:18px;flex-wrap:wrap}
+    .badge{background:rgba(255,255,255,.95);color:var(--blue);padding:8px 12px;border-radius:22px;font-weight:700;box-shadow:0 6px 18px rgba(10,13,30,0.06)}
 
     /* sections */
     .section{max-width:1200px;margin:48px auto;padding:0 18px}
-    .section h2{text-align:center;color:var(--blue);font-size:30px;margin-bottom:18px}
+    .section h2{text-align:center;color:#ffffff;font-size:30px;margin-bottom:18px}
     .muted{color:var(--muted)}
+
     .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:18px}
     .card{background:var(--card);padding:18px;border-radius:12px;box-shadow:0 10px 30px rgba(10,13,30,0.06);text-align:center;transform:translateY(18px);opacity:0;transition:transform .6s cubic-bezier(.2,.9,.3,1),opacity .6s}
     .card.reveal{transform:translateY(0);opacity:1}
@@ -74,342 +101,260 @@
     .icon{font-size:36px}
     .title{font-weight:700;color:var(--blue)}
     .price{font-weight:800;color:#163a8a}
+    .paybox{margin-top:8px}
     .pay-btn{background:#0b0b0b;color:var(--gold);padding:9px 12px;border-radius:8px;text-decoration:none;font-weight:800;display:inline-block}
     .order-btn{background:var(--accent);color:#fff;padding:10px 12px;border-radius:8px;text-decoration:none;font-weight:700;display:inline-block;margin-top:8px}
+
     .sample-card{padding:14px;border-radius:12px;background:linear-gradient(180deg,#fff,#fbfdff);border:1px solid rgba(10,61,145,0.04);transform:translateY(18px);opacity:0;transition:all .6s}
     .sample-card.reveal{transform:translateY(0);opacity:1}
+
     .review,.faq-item{background:#fff;padding:14px;border-radius:10px;box-shadow:0 10px 30px rgba(10,13,30,0.06);text-align:left;transform:translateY(18px);opacity:0;transition:all .6s}
     .review.reveal,.faq-item.reveal{transform:translateY(0);opacity:1}
+
     .contact{display:flex;flex-direction:column;align-items:center;gap:6px}
+
     footer{background:linear-gradient(90deg,var(--blue),var(--accent));color:#fff;padding:18px;text-align:center;margin-top:36px}
-    /* Floating container (left column) — compact, not full width */
-.floating {
-  position: fixed;
-  left: 18px;
-  right: auto;        /* important — prevents full-width stretch */
-  bottom: 18px;
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
-  z-index: 999;
-  width: auto;        /* ensure container doesn't expand */
-  align-items: flex-start; /* left-align buttons inside container */
-  pointer-events: auto;
-}
 
-/* Compact button base */
-.floating a.whatsapp,
-.floating a.call {
-  display: inline-flex;       /* inline-flex keeps size to content */
-  align-items: center;
-  gap: 10px;
-  padding: 10px 14px;         /* compact padding */
-  border-radius: 28px;        /* pill shape */
-  font-weight: 700;
-  font-size: 14px;
-  text-decoration: none;
-  white-space: nowrap;        /* prevent text wrapping */
-  box-shadow: 0 8px 20px rgba(10, 40, 80, 0.08);
-  min-width: 44px;            /* ensures icon-only still looks good */
-  max-width: 260px;          /* prevents over-wide buttons */
-  overflow: hidden;
-  box-sizing: border-box;
-}
+    /* floating buttons (left side) - compact */
+    .floating{
+      position:fixed;
+      left:18px;
+      right:auto;
+      bottom:18px;
+      display:flex;
+      flex-direction:column;
+      gap:12px;
+      z-index:999;
+      width:auto;
+      align-items:flex-start;
+      pointer-events:auto;
+    }
+    .floating a.whatsapp,
+    .floating a.call{
+      display:inline-flex;
+      align-items:center;
+      gap:10px;
+      padding:10px 14px;
+      border-radius:28px;
+      font-weight:700;
+      font-size:14px;
+      text-decoration:none;
+      white-space:nowrap;
+      box-shadow:0 8px 20px rgba(10,40,80,0.08);
+      min-width:44px;
+      max-width:260px;
+      overflow:hidden;
+      box-sizing:border-box;
+      color:#fff;
+    }
+    .floating a.whatsapp{background:linear-gradient(45deg,#19c37d,#1bd86f);color:#fff}
+    .floating a.call{background:#0a3d91;color:#fff}
+    @media(max-width:520px){
+      .floating a.whatsapp,.floating a.call{padding:10px;border-radius:999px;font-size:13px;gap:6px;}
+    }
 
-/* WhatsApp style (green) */
-.floating a.whatsapp {
-  background: linear-gradient(45deg, #19c37d, #1bd86f);
-  color: #fff;
-}
+    .floating{z-index:999}
 
-/* Call style (blue) */
-.floating a.call {
-  background: #0a3d91;
-  color: #fff;
-}
+    /* chat root (keep right) */
+    #rvChatRoot{position:fixed;right:18px;bottom:18px;z-index:11000}
 
-/* If you want icon-only small circles on very small screens */
-@media (max-width: 520px) {
-  .floating a.whatsapp,
-  .floating a.call {
-    padding: 10px;
-    border-radius: 999px;
-    font-size: 13px;
-    gap: 6px;
-  }
-}
-/* Floating container (left column) — compact, not full width */
-.floating {
-  position: fixed;
-  left: 18px;
-  right: auto;        /* important — prevents full-width stretch */
-  bottom: 18px;
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
-  z-index: 999;
-  width: auto;        /* ensure container doesn't expand */
-  align-items: flex-start; /* left-align buttons inside container */
-  pointer-events: auto;
-}
+    /* reveal helpers (used by script) */
+    .reveal{opacity:1;transform:none}
+    .invisible{opacity:0;transform:translateY(18px)}
 
-/* Compact button base */
-.floating a.whatsapp,
-.floating a.call {
-  display: inline-flex;       /* inline-flex keeps size to content */
-  align-items: center;
-  gap: 10px;
-  padding: 10px 14px;         /* compact padding */
-  border-radius: 28px;        /* pill shape */
-  font-weight: 700;
-  font-size: 14px;
-  text-decoration: none;
-  white-space: nowrap;        /* prevent text wrapping */
-  box-shadow: 0 8px 20px rgba(10, 40, 80, 0.08);
-  min-width: 44px;            /* ensures icon-only still looks good */
-  max-width: 260px;          /* prevents over-wide buttons */
-  overflow: hidden;
-  box-sizing: border-box;
-}
+    /* dark mode base */
+    body.dark{
+      background:var(--dark);
+      color:var(--gold);
+    }
+    body.dark header{background:#000}
+    body.dark nav a{color:var(--gold)}
+    body.dark .badge{background:#0b0b0b;color:var(--gold)}
+    body.dark .card, body.dark .sample-card, body.dark .review, body.dark .faq-item{background:#0b0b0c;color:var(--gold);border:1px solid rgba(255,215,0,0.04)}
+    body.dark footer{background:#000;color:var(--gold)}
 
-/* WhatsApp style (green) */
-.floating a.whatsapp {
-  background: linear-gradient(45deg, #19c37d, #1bd86f);
-  color: #fff;
-}
+    /* ensure headings visible & white for hero/sections */
+    .hero .hero-title, .hero .hero-sub, .section h2 { color: #fff !important; text-shadow:0 2px 8px rgba(0,0,0,0.12); }
+    header .brand, header .tagline, header nav a { color: #fff !important; }
 
-/* Call style (blue) */
-.floating a.call {
-  background: #0a3d91;
-  color: #fff;
-}
-
-/* If you want icon-only small circles on very small screens */
-@media (max-width: 520px) {
-  .floating a.whatsapp,
-  .floating a.call {
-    padding: 10px;
-    border-radius: 999px;
-    font-size: 13px;
-    gap: 6px;}} header {
-  position: sticky !important;
-  top: 0;
-  z-index: 6000 !important;
-}
-
-header .brand,
-header .tagline,
-header nav a,
-#themeToggle {
-  position: relative !important;
-  z-index: 6100 !important;
-  color: inherit !important;
-  display: inline-block !important;
-}
-
-.hero .hero-title,
-.hero .hero-sub,
-.section h2 {
-  opacity: 1 !important;
-  transform: none !important;
-  position: relative !important;
-  z-index: 5000 !important;
-  color: var(--blue) !important;
-}
-
-.section h2 { z-index: 4800 !important; }
-
-.floating {
-  position: fixed !important;
-  left: 18px !important;
-  right: auto !important;
-  bottom: 18px !important;
-  display: flex !important;
-  flex-direction: column !important;
-  gap: 12px !important;
-  z-index: 999 !important;
-  width: auto !important;
-  align-items: flex-start !important;
-}
-
-.floating a.whatsapp,
-.floating a.call {
-  display: inline-flex !important;
-  align-items: center !important;
-  gap: 10px !important;
-  padding: 10px 14px !important;
-  border-radius: 28px !important;
-  font-weight: 700 !important;
-  font-size: 14px !important;
-  white-space: nowrap !important;
-  min-width: 44px !important;
-  max-width: 260px !important;
-  overflow: hidden !important;
-}
-
-.floating a.whatsapp {
-  background: linear-gradient(45deg,#19c37d,#1bd86f) !important;
-  color:#fff !important;
-}
-
-.floating a.call {
-  background:#0a3d91 !important;
-  color:#fff !important;
-}
-
-@media (max-width:520px) {
-  .floating a.whatsapp,
-  .floating a.call {
-    padding: 10px !important;
-    border-radius: 999px !important;
-    font-size: 13px !important;
-    gap: 6px !important;
-  }
-}
-
-#rvChatRoot {
-  position: fixed !important;
-  right: 18px !important;
-  bottom: 18px !important;
-  z-index: 11000 !important;
-}
-
-[style*="width:100%"][style*="position:fixed"] {
-  z-index: 100 !important;
-}
-
-header, .hero .hero-title, .section h2 {
-  transition: opacity .25s ease, transform .25s ease;
-}</style> 
+    @media(max-width:720px){
+      .hero{padding:56px 14px}
+      .hero h1{font-size:28px}
+    }
+  </style>
 </head>
 <body>
 
-<header class="rv-header">
-  <div>
-    <div class="rv-brand">ResumeVibe Studio</div>
-    <div class="rv-tag">Your Trusted Partner for Online Services</div>
+<header>
+  <div style="display:flex;gap:12px;align-items:center">
+    <div>
+      <div class="brand">ResumeVibe Studio</div>
+      <div class="tagline" style="opacity:.85;font-size:12px">Your Trusted Partner for Online Services</div>
+    </div>
   </div>
 
-  <nav class="rv-nav">
-    <a href="#services">Services</a>
-    <a href="#samples">Samples</a>
-    <a href="#reviews">Reviews</a>
-    <a href="#faq">FAQ</a>
-    <a href="#contact">Contact</a>
-  </nav>
-
-  <div class="rv-controls">
-    <button id="themeToggle">Dark</button>
+  <div style="display:flex;align-items:center;gap:12px">
+    <nav>
+      <a href="#services">Services</a>
+      <a href="#samples">Samples</a>
+      <a href="#reviews">Reviews</a>
+      <a href="#faq">FAQ</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <div class="controls">
+      <button id="themeToggle" title="Toggle dark mode">Dark</button>
+    </div>
   </div>
 </header>
 
 <section class="hero">
-  <div class="floating-shape"></div>
+  <div class="floating-shape" style="background:linear-gradient(180deg,#fff,#fff);left:-20%;top:-10%"></div>
+  <h1 class="hero-title invisible">Premium Resumes & Fast Digital Services</h1>
+  <p class="hero-sub invisible">We build professional resumes, fill forms, and handle online tasks so you can focus on what matters. Student-friendly, fast delivery, accurate & affordable.</p>
 
-  <h1 class="hero-title">Premium Resumes & Fast Digital Services</h1>
-  <p class="hero-sub">Professional resume building, typing services, online form filling & student-friendly digital support with fast delivery.</p>
-</section>
+  <div class="cta invisible" style="margin-top:18px">
+    <a class="btn btn-primary" href="https://wa.me/917039840579?text=I%20want%20to%20order">Order via WhatsApp</a>
+    <a class="btn btn-outline" href="#services">View Services</a>
+  </div>
 
-<section id="services" class="section" style="max-width:1200px;margin:60px auto;padding:0 20px;">
-  <h2 style="text-align:center;color:#0a3d91;font-size:32px;margin-bottom:18px;">Our Services</h2>
-  <p style="text-align:center;color:#6b7280;max-width:820px;margin:6px auto 28px;">Resume services, typing, professional form filling & online digital services — fast, accurate and student-friendly.</p>
-
-  <div class="grid" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:20px;">
-    <div class="card invisible"><div class="icon">📝</div><div class="title">Simple Resume</div><div class="price">₹149</div><a class="pay-btn" href="upi://pay?pa=9930045850@ptyes&pn=ResumeVibeStudio&am=149&cu=INR">Pay ₹149</a><a class="order-btn" href="https://wa.me/917039840579?text=I%20want%20Simple%20Resume%20₹149">Order Now</a></div>
-    <div class="card invisible"><div class="icon">💼</div><div class="title">Professional Resume</div><div class="price">₹249</div><a class="pay-btn" href="upi://pay?pa=9930045850@ptyes&pn=ResumeVibeStudio&am=249&cu=INR">Pay ₹249</a><a class="order-btn" href="https://wa.me/917039840579?text=I%20want%20Professional%20Resume%20₹249">Order Now</a></div>
-    <div class="card invisible"><div class="icon">🎯</div><div class="title">ATS Resume</div><div class="price">₹399</div><a class="pay-btn" href="upi://pay?pa=9930045850@ptyes&pn=ResumeVibeStudio&am=399&cu=INR">Pay ₹399</a><a class="order-btn" href="https://wa.me/917039840579?text=I%20want%20ATS%20Resume%20₹399">Order Now</a></div>
-    <div class="card invisible"><div class="icon">✉️</div><div class="title">Cover Letter</div><div class="price">₹99</div><a class="pay-btn" href="upi://pay?pa=9930045850@ptyes&pn=ResumeVibeStudio&am=99&cu=INR">Pay ₹99</a><a class="order-btn" href="https://wa.me/917039840579?text=I%20want%20Cover%20Letter%20₹99">Order Now</a></div>
-    <div class="card invisible"><div class="icon">🗂️</div><div class="title">Government & Exam Form Filling</div><div class="price">Charges Vary</div><a class="order-btn" href="https://wa.me/917039840579?text=I%20need%20Government%20Form%20Filling">Order Now</a></div>
-    <div class="card invisible"><div class="icon">🏫</div><div class="title">College / School Admission Forms</div><div class="price">Charges Vary</div><a class="order-btn" href="https://wa.me/917039840579?text=I%20need%20Admission%20Form%20Filling">Order Now</a></div>
-    <div class="card invisible"><div class="icon">⌨️</div><div class="title">Assignment Typing</div><div class="price">₹10 / page</div><a class="order-btn" href="https://wa.me/917039840579?text=I%20need%20Assignment%20Typing">Order Now</a></div>
+  <div class="badges invisible" style="margin-top:18px">
+    <div class="badge">⚡ Fast Delivery</div>
+    <div class="badge">🎓 Student Friendly</div>
+    <div class="badge">✔ 100% Accuracy</div>
   </div>
 </section>
 
-<section id="samples" class="section" style="max-width:1200px;margin:60px auto;padding:0 20px;">
-  <h2 style="text-align:center;color:#0a3d91;font-size:32px;margin-bottom:18px;">Resume Samples</h2>
-  <div class="grid" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:20px;">
+<section id="services" class="section">
+  <h2>Our Services</h2>
+  <p class="muted" style="text-align:center;max-width:820px;margin:6px auto 18px">Resume services, typing, online applications and professional form filling — order via WhatsApp or pay instantly via UPI.</p>
+
+  <div class="grid">
+    <div class="card invisible">
+      <div class="icon">📝</div>
+      <div class="title">Simple Resume</div>
+      <div class="price">₹149</div>
+      <div class="paybox">
+        <a class="pay-btn" href="upi://pay?pa=9930045850@ptyes&pn=ResumeVibeStudio&am=149&cu=INR">Pay ₹149</a>
+        <div class="muted small-muted">Or order via WhatsApp</div>
+      </div>
+      <a class="order-btn" href="https://wa.me/917039840579?text=I%20want%20Simple%20Resume%20₹149">Order Now</a>
+    </div>
+
+    <div class="card invisible">
+      <div class="icon">💼</div>
+      <div class="title">Professional Resume</div>
+      <div class="price">₹249</div>
+      <div class="paybox">
+        <a class="pay-btn" href="upi://pay?pa=9930045850@ptyes&pn=ResumeVibeStudio&am=249&cu=INR">Pay ₹249</a>
+        <div class="muted small-muted">Or order via WhatsApp</div>
+      </div>
+      <a class="order-btn" href="https://wa.me/917039840579?text=I%20want%20Professional%20Resume%20₹249">Order Now</a>
+    </div>
+
+    <div class="card invisible">
+      <div class="icon">🎯</div>
+      <div class="title">ATS Resume</div>
+      <div class="price">₹399</div>
+      <div class="paybox">
+        <a class="pay-btn" href="upi://pay?pa=9930045850@ptyes&pn=ResumeVibeStudio&am=399&cu=INR">Pay ₹399</a>
+        <div class="muted small-muted">Or order via WhatsApp</div>
+      </div>
+      <a class="order-btn" href="https://wa.me/917039840579?text=I%20want%20ATS%20Resume%20₹399">Order Now</a>
+    </div>
+
+    <div class="card invisible">
+      <div class="icon">✉️</div>
+      <div class="title">Cover Letter</div>
+      <div class="price">₹99</div>
+      <div class="paybox">
+        <a class="pay-btn" href="upi://pay?pa=9930045850@ptyes&pn=ResumeVibeStudio&am=99&cu=INR">Pay ₹99</a>
+        <div class="muted small-muted">Or order via WhatsApp</div>
+      </div>
+      <a class="order-btn" href="https://wa.me/917039840579?text=I%20want%20Cover%20Letter%20₹99">Order Now</a>
+    </div>
+  </div>
+
+  <div style="height:14px"></div>
+  <div class="grid" style="margin-top:18px">
+    <div class="card invisible">
+      <div class="icon">🗂️</div>
+      <div class="title">Government & Exam Form Filling</div>
+      <div class="price">Charges Vary</div>
+      <div class="small-muted">Charges depend on exam fees & official form charges.</div>
+      <a class="order-btn" href="https://wa.me/917039840579?text=I%20need%20Government%20Form%20Filling">Order Now</a>
+    </div>
+
+    <div class="card invisible">
+      <div class="icon">🏫</div>
+      <div class="title">College / School Admission Forms</div>
+      <div class="price">Charges Vary</div>
+      <div class="small-muted">Charges depend on portal fees & documents required.</div>
+      <a class="order-btn" href="https://wa.me/917039840579?text=I%20need%20Admission%20Form%20Filling">Order Now</a>
+    </div>
+
+    <div class="card invisible">
+      <div class="icon">⌨️</div>
+      <div class="title">Assignment Typing</div>
+      <div class="price">₹10 / page</div>
+      <div class="small-muted">Formatting & neat typing included.</div>
+      <a class="order-btn" href="https://wa.me/917039840579?text=I%20need%20Assignment%20Typing">Order Now</a>
+    </div>
+  </div>
+</section>
+
+<section id="samples" class="section">
+  <h2>Resume Samples</h2>
+  <div class="grid">
     <div class="sample-card invisible"><h3>Modern Clean</h3><a class="order-btn" href="samples/sample1.html" target="_blank">View Sample</a></div>
     <div class="sample-card invisible"><h3>ATS Friendly</h3><a class="order-btn" href="samples/sample2.html" target="_blank">View Sample</a></div>
     <div class="sample-card invisible"><h3>Creative Two-Column</h3><a class="order-btn" href="samples/sample3.html" target="_blank">View Sample</a></div>
   </div>
 </section>
 
-<section id="reviews" class="section" style="max-width:1200px;margin:60px auto;padding:0 20px;">
-  <h2 style="text-align:center;color:#0a3d91;font-size:32px;margin-bottom:18px;">Customer Reviews</h2>
-  <div class="grid" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:20px;">
+<section id="reviews" class="section">
+  <h2>Customer Reviews</h2>
+  <div class="grid">
     <div class="review invisible"><strong>Priya S.</strong><p>“Super fast — resume delivered in 20 minutes.”</p></div>
     <div class="review invisible"><strong>Rohit K.</strong><p>“Helped with admission forms; very accurate.”</p></div>
     <div class="review invisible"><strong>Meera J.</strong><p>“Affordable and professional.”</p></div>
   </div>
 </section>
 
-<section id="faq" class="section" style="max-width:1200px;margin:60px auto;padding:0 20px;">
-  <h2 style="text-align:center;color:#0a3d91;font-size:32px;margin-bottom:18px;">FAQ</h2>
-  <div class="grid" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:20px;">
+<section id="faq" class="section">
+  <h2>FAQ</h2>
+  <div class="grid">
     <div class="faq-item invisible"><strong>How fast can I get a resume?</strong><p>Most resumes delivered in 15–30 minutes.</p></div>
-    <div class="faq-item invisible"><strong>How do I pay?</strong><p>UPI / WhatsApp ordering available.</p></div>
+    <div class="faq-item invisible"><strong>How do I pay?</strong><p>Use the Pay button (UPI) or order via WhatsApp.</p></div>
     <div class="faq-item invisible"><strong>Do you offer edits?</strong><p>Yes — one free edit after delivery.</p></div>
   </div>
 </section>
 
-<section id="contact" class="section" style="max-width:1200px;margin:60px auto;padding:0 20px;">
-  <h2 style="text-align:center;color:#0a3d91;font-size:32px;margin-bottom:18px;">Contact Us</h2>
-  <div style="text-align:center;color:#0a3d91;font-size:18px;">📍 Mumbai <br> 📞 7039840579 / 9930045850 <br> 📧 resumevibestudio@gmail.com</div>
+<section id="contact" class="section">
+  <h2>Contact Us</h2>
+  <div class="contact">
+    <div>📍 Mumbai</div>
+    <div>📞 7039840579 / 9930045850</div>
+    <div>📧 resumevibestudio@gmail.com</div>
+  </div>
 </section>
 
-<footer style="background:linear-gradient(90deg,#0a3d91,#4d91ff);color:#fff;text-align:center;padding:20px;">© 2025 ResumeVibe Studio — All Rights Reserved</footer>
+<footer>© 2025 ResumeVibe Studio — All Rights Reserved</footer>
 
-<div class="floating" style="position:fixed;right:20px;bottom:20px;display:flex;flex-direction:column;gap:12px;z-index:999;">
-  <a class="whatsapp" href="https://wa.me/917039840579" target="_blank" style="background:#19c37d;color:white;padding:14px 16px;border-radius:50px;font-weight:700;text-decoration:none;">💬 WhatsApp</a>
-  <a class="call" href="tel:+917039840579" style="background:#0a3d91;color:white;padding:14px 16px;border-radius:50px;font-weight:700;text-decoration:none;">📞 Call</a>
+<!-- Floating left buttons -->
+<div class="floating" aria-hidden="false">
+  <a class="whatsapp" href="https://wa.me/917039840579" target="_blank" title="WhatsApp"><span>💬</span>&nbsp;<span>WhatsApp</span></a>
+  <a class="call" href="tel:+917039840579" title="Call"><span>📞</span>&nbsp;<span>Call</span></a>
 </div>
 
-<script>
-/* === Heading & Dark-mode color fixes === */
+<!-- Chatbot root (kept on right) -->
+<div id="rvChatRoot" aria-live="polite">
+  <button id="rvChatBtn" aria-label="Open chat" title="Chat with ResumeVibe" style="display:none">
+    <!-- hidden duplicate; chatbot block below will insert its own button -->
+  </button>
+</div>
 
-/* Always make main headings white over the hero */
-.hero .hero-title,
-.hero .hero-sub {
-  color: #ffffff !important;
-}
-
-/* Section headings white for dark/hero contrast */
-.section h2 {
-  color: #ffffff !important; /* white */
-  text-shadow: 0 2px 8px rgba(0,0,0,0.15);
-}
-
-/* Header brand & nav should remain bright on colored header */
-header .brand,
-header .tagline,
-header nav a {
-  color: #fff !important;
-}
-
-/* If your default page background is light but you want white headings there too,
-   limit white headings only where background is dark (optional): */
-.hero + .section .section h2 { color: #0a3d91 !important; } /* leave as is for normal sections */
-
-/* DARK mode styling (when body.dark class exists) */
-body.dark {
-  background: #050506 !important;
-  color: #e8d9b0 !important;
-}
-
-/* Ensure headings stay visible in dark mode */
-body.dark .section h2,
-body.dark header .brand,
-body.dark header nav a {
-  color: #fff !important;
-}
-
-/* Small tweak to ensure theme button stays readable */
-#themeToggle { color: #fff !important; border-color: rgba(255,255,255,0.14) !important; }
-
-/* UPI Click Alert (Desktop) */
-document.querySelectorAll('.pay-btn').forEach(btn=>{ btn.addEventListener('click', ()=>{ setTimeout(()=>{ if(!/Mobi|Android/i.test(navigator.userAgent)){ alert("If UPI didn't open, please order via WhatsApp on your phone."); } },700); }); });
-</script>
-  <!-- START: ResumeVibe Chatbot — Avatar + Welcome Popup + Multi-language -->
+<!-- Chatbot block (full) - keep as-is, needs to be just before </body> -->
+<!-- START: ResumeVibe Chatbot — Avatar + Welcome Popup + Multi-language -->
 <style>
 /* ---- Chat widget core styles ---- */
 #rvChatRoot{font-family: Poppins, Inter, system-ui, -apple-system, "Segoe UI", Roboto, Arial; position:fixed;right:18px;bottom:18px;z-index:11000}
@@ -440,8 +385,7 @@ document.querySelectorAll('.pay-btn').forEach(btn=>{ btn.addEventListener('click
 </style>
 
 <div id="rvChatRoot" aria-live="polite">
-  <button id="rvChatBtn" aria-label="Open chat" title="Chat with ResumeVibe">
-    <!-- simple chat bubble SVG -->
+  <button id="rvChatBtn" aria-label="Open chat" title="Chat with ResumeVibe" style="display:flex">
     <svg viewBox="0 0 24 24" width="28" height="28" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
       <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2v10z" fill="#fff" opacity="0.95"/>
       <path d="M8.5 10.5h7M8.5 7.5h7" stroke="#0a3d91" stroke-width="0.6" stroke-linecap="round" stroke-linejoin="round"/>
@@ -451,7 +395,6 @@ document.querySelectorAll('.pay-btn').forEach(btn=>{ btn.addEventListener('click
   <div id="rvChatPanel" role="dialog" aria-hidden="true" aria-label="ResumeVibe Chat">
     <header>
       <div class="rv-avatar" title="ResumeVibe">
-        <!-- avatar: initials SVG (editable) -->
         <svg width="28" height="28" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
           <defs><linearGradient id="gA" x1="0" x2="1"><stop offset="0" stop-color="#0a3d91"/><stop offset="1" stop-color="#4d91ff"/></linearGradient></defs>
           <circle cx="50" cy="50" r="48" fill="url(#gA)"/>
@@ -485,7 +428,6 @@ document.querySelectorAll('.pay-btn').forEach(btn=>{ btn.addEventListener('click
 /* ResumeVibe Chatbot — Avatar + Auto-popup + Multi-language support
    Paste this block before </body>. Delete any previous rvChatRoot block first. */
 
-// ---- multi-language strings ----
 const LANG = {
   en: {
     welcome: "👋 Hello! Welcome to ResumeVibe Studio — your quick digital assistant. How can I help you today?",
@@ -522,7 +464,6 @@ const LANG = {
   }
 };
 
-// ---- DOM refs ----
 const rvBtn = document.getElementById('rvChatBtn');
 const rvPanel = document.getElementById('rvChatPanel');
 const rvBody = document.getElementById('rvBody');
@@ -533,14 +474,11 @@ const langButtons = document.querySelectorAll('.rv-lang button');
 
 let state = { lang: localStorage.getItem('rv_lang') || 'en', collected: {}, context:'welcome' };
 
-// helper: render bot message
 function bot(text){
   const d = document.createElement('div'); d.className='rv-msg bot'; d.textContent = text; rvBody.appendChild(d); rvBody.scrollTop = rvBody.scrollHeight;
 }
-// helper: render user message
 function user(text){ const d = document.createElement('div'); d.className='rv-msg user'; d.textContent = text; rvBody.appendChild(d); rvBody.scrollTop = rvBody.scrollHeight; }
 
-// initial language setup UI
 function setLangUI(){
   langButtons.forEach(b=>{ b.style.opacity = b.dataset.lang === state.lang ? '1' : '0.6'; });
 }
@@ -550,7 +488,6 @@ langButtons.forEach(btn=>{
   btn.addEventListener('click', ()=>{
     state.lang = btn.dataset.lang;
     localStorage.setItem('rv_lang', state.lang);
-    // clear chat & show welcome again in selected language
     rvBody.innerHTML='';
     setLangUI();
     showWelcome(true);
@@ -558,22 +495,14 @@ langButtons.forEach(btn=>{
 });
 setLangUI();
 
-// render welcome flow (option buttons)
 function showWelcome(auto=false){
   const S = LANG[state.lang];
-  if(auto){
-    // if auto open, show a shorter greeting then options
-    bot(S.welcome);
-  } else {
-    bot(S.welcome);
-  }
-  // render option buttons
+  bot(S.welcome);
   const actions = LANG[state.lang].options;
   const wrap = document.createElement('div'); wrap.className='rv-actions';
   actions.forEach(label=>{
     const btn = document.createElement('button'); btn.className='rv-btn';
     btn.textContent = label;
-    // map label to actions (simple mapping):
     btn.addEventListener('click', ()=>{ user(label); routeText(label); });
     wrap.appendChild(btn);
   });
@@ -581,7 +510,6 @@ function showWelcome(auto=false){
   rvBody.scrollTop = rvBody.scrollHeight;
 }
 
-// route typed text or button label to actions
 function routeText(txt){
   const lower = txt.toString().toLowerCase();
   const S = LANG[state.lang];
@@ -591,12 +519,10 @@ function routeText(txt){
   if(lower.includes('sample') || lower.includes('नमू') || lower.includes('नमून')) return showSamples();
   if(lower.includes('price') || lower.includes('कीमत') || lower.includes('किंमत')) return showPricing();
   if(lower.includes('agent') || lower.includes('एज') || lower.includes('मानव')) return sendToAgent();
-  // fallback
   bot(S.welcome);
   showWelcome();
 }
 
-// Ask resume details flow
 function askResume(){
   const S = LANG[state.lang];
   bot(S.resume_q);
@@ -611,19 +537,11 @@ function askResume(){
   rvBody.scrollTop = rvBody.scrollHeight;
 }
 
-// Ask form flow
 function askForm(){ const S = LANG[state.lang]; bot(S.collect_resume); collectFields(['name','phone','form_name','deadline','note']); }
-
-// Ask typing flow
 function askTyping(){ const S = LANG[state.lang]; bot(S.collect_resume); collectFields(['name','phone','pages','deadline']); }
-
-// Show samples
 function showSamples(){ const S = LANG[state.lang]; bot(S.samples_text); }
-
-// Show pricing
 function showPricing(){ const S = LANG[state.lang]; bot(S.pricing_text); }
 
-// send to human agent (whatsapp)
 function sendToAgent(){
   const S = LANG[state.lang];
   bot(S.thank_you);
@@ -631,7 +549,6 @@ function sendToAgent(){
   setTimeout(()=>window.open(url,'_blank'),600);
 }
 
-// collect fields UI
 function collectFields(fields){
   const container = document.createElement('div'); container.style.marginTop='8px';
   fields.forEach(f=>{
@@ -644,14 +561,11 @@ function collectFields(fields){
   submit.addEventListener('click', ()=>{
     const inputs = container.querySelectorAll('input, textarea');
     inputs.forEach(i=>{ const k=i.dataset.field; if(k) state.collected[k]=i.value.trim(); });
-    // phone validation if present
     if(fields.includes('phone')){
       const p = state.collected.phone || '';
       if(!/^\d{10}$/.test(p)){ bot(LANG[state.lang].invalid_phone); return; }
     }
-    // show collected values as user messages
     Object.keys(state.collected).forEach(k=>{ user(`${k}: ${state.collected[k]}`); });
-    // final confirmation message and WhatsApp link
     const svc = state.collected.service || 'Service';
     const msg = `Hello, I want ${svc}. Name: ${state.collected.name || ''}. Phone: ${state.collected.phone || ''}. Deadline: ${state.collected.deadline || ''}. Note: ${state.collected.note || ''}`;
     bot(LANG[state.lang].thank_you);
@@ -662,15 +576,12 @@ function collectFields(fields){
   rvBody.appendChild(container); rvBody.scrollTop = rvBody.scrollHeight;
 }
 
-// typed input handling
 rvSendBtn.addEventListener('click', ()=>{ const txt = rvSendInput.value.trim(); if(!txt) return; user(txt); rvSendInput.value=''; routeText(txt); });
 rvSendInput.addEventListener('keypress',(e)=>{ if(e.key==='Enter'){ e.preventDefault(); rvSendBtn.click(); }});
 
-// open/close panel
 rvBtn.addEventListener('click', ()=>{ const open = rvPanel.classList.toggle('show'); rvPanel.setAttribute('aria-hidden', open ? 'false' : 'true'); if(open && rvBody.children.length===0){ showWelcome(); }});
 rvClosePanel.addEventListener('click', ()=>{ rvPanel.classList.remove('show'); rvPanel.setAttribute('aria-hidden','true'); });
 
-// language buttons: set dataset and update UI
 document.querySelectorAll('.rv-lang button').forEach(btn=>{
   const code = btn.dataset.lang || btn.textContent.toLowerCase();
   btn.dataset.lang = code;
@@ -680,22 +591,58 @@ document.querySelectorAll('.rv-lang button').forEach(b=> b.addEventListener('cli
 
 updateLangButtons();
 
-// ---------------- Welcome popup auto-open (once per session) ----------------
 (function autoOpen(){
-  // only auto-open if not seen in this tab/session
   if(sessionStorage.getItem('rv_chat_auto_shown')) return;
   sessionStorage.setItem('rv_chat_auto_shown','1');
-  // open after 5 seconds
   setTimeout(()=>{ rvPanel.classList.add('show'); rvPanel.setAttribute('aria-hidden','false'); showWelcome(true); setTimeout(()=>{ rvSendInput.focus(); },400); }, 5000);
 })();
 
-// Accessibility: focus input when opened
 const obs = new MutationObserver(()=>{ if(rvPanel.classList.contains('show')) setTimeout(()=>rvSendInput.focus(),300); });
 obs.observe(rvPanel,{attributes:true,attributeFilter:['class']});
-
 </script>
 <!-- END: ResumeVibe Chatbot -->
 
+<!-- Dark-mode script (reliable) -->
+<script>
+(function(){
+  const themeToggle = document.getElementById('themeToggle');
+  const body = document.body;
+  if(!themeToggle) return;
+
+  function applyTheme(){
+    try {
+      const stored = localStorage.getItem('rv_dark');
+      if(stored === '1'){
+        body.classList.add('dark');
+        themeToggle.textContent = 'Light';
+      } else {
+        body.classList.remove('dark');
+        themeToggle.textContent = 'Dark';
+      }
+    } catch(e){
+      body.classList.remove('dark');
+      themeToggle.textContent = 'Dark';
+    }
+  }
+  function toggleTheme(){
+    const isDark = body.classList.toggle('dark');
+    try { localStorage.setItem('rv_dark', isDark ? '1' : '0'); } catch(e){}
+    themeToggle.textContent = isDark ? 'Light' : 'Dark';
+  }
+  applyTheme();
+  themeToggle.removeEventListener('click', toggleTheme);
+  themeToggle.addEventListener('click', toggleTheme);
+  themeToggle.addEventListener('keypress', function(e){ if(e.key === 'Enter') toggleTheme(); });
+  (function systemPrefOnce(){
+    try{
+      if(localStorage.getItem('rv_dark') === null && window.matchMedia){
+        const preferDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+        if(preferDark) { body.classList.add('dark'); themeToggle.textContent = 'Light'; }
+      }
+    }catch(e){}
+  })();
+})();
+</script>
 
 </body>
 </html>
