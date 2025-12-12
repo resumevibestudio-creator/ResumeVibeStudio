@@ -82,36 +82,118 @@
     .review.reveal,.faq-item.reveal{transform:translateY(0);opacity:1}
     .contact{display:flex;flex-direction:column;align-items:center;gap:6px}
     footer{background:linear-gradient(90deg,var(--blue),var(--accent));color:#fff;padding:18px;text-align:center;margin-top:36px}
-    .floating{position:fixed;left:18px;bottom:18px;display:flex;flex-direction:column;gap:12px;z-index:999}
-    .whatsapp{
-  background:linear-gradient(45deg,#19c37d,#1bd86f);
-  color:#fff;
-  padding:10px 12px;       /* reduced padding */
-  border-radius:50px;
-  font-weight:700;
-  font-size:14px;          /* smaller text */
-  display:inline-flex;
-  align-items:center;
-  gap:6px;
-  text-decoration:none;
-  box-shadow:0 8px 20px rgba(27,216,111,0.18);
+    /* Floating container (left column) — compact, not full width */
+.floating {
+  position: fixed;
+  left: 18px;
+  right: auto;        /* important — prevents full-width stretch */
+  bottom: 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  z-index: 999;
+  width: auto;        /* ensure container doesn't expand */
+  align-items: flex-start; /* left-align buttons inside container */
+  pointer-events: auto;
 }
 
-.call{
-  background:#0a3d91;
-  color:#fff;
-  padding:10px 12px; /* reduced padding */border-radius:50px;font-weight:700;font-size:14px;/* smaller text */text-decoration:none;display:inline-flex;align-items:center;gap:6px;box-shadow:0 8px 20px rgba(10,61,145,0.18);}
- @keyframes cta-pulse{0%{transform:translateY(0)}50%{transform:translateY(-6px) scale(1.02)}100%{transform:translateY(0)}}
-    .reveal{opacity:1 !important;transform:none !important}
-    .invisible{opacity:0;transform:translateY(18px)}
-    body.dark{background:var(--dark);color:var(--gold)}
-    body.dark .rv-header{background:#000}
-    body.dark .rv-nav a{color:var(--gold)}
-    body.dark .badge{background:#0b0b0b;color:var(--gold)}
-    body.dark .card, body.dark .sample-card, body.dark .review, body.dark .faq-item{background:#0b0b0c;color:var(--gold);border:1px solid rgba(255,215,0,0.04)}
-    body.dark footer{background:#000;color:var(--gold)}
-    @media(max-width:720px){.hero{padding:56px 14px}.hero h1{font-size:28px}.rv-nav{display:none}}
-  </style>
+/* Compact button base */
+.floating a.whatsapp,
+.floating a.call {
+  display: inline-flex;       /* inline-flex keeps size to content */
+  align-items: center;
+  gap: 10px;
+  padding: 10px 14px;         /* compact padding */
+  border-radius: 28px;        /* pill shape */
+  font-weight: 700;
+  font-size: 14px;
+  text-decoration: none;
+  white-space: nowrap;        /* prevent text wrapping */
+  box-shadow: 0 8px 20px rgba(10, 40, 80, 0.08);
+  min-width: 44px;            /* ensures icon-only still looks good */
+  max-width: 260px;          /* prevents over-wide buttons */
+  overflow: hidden;
+  box-sizing: border-box;
+}
+
+/* WhatsApp style (green) */
+.floating a.whatsapp {
+  background: linear-gradient(45deg, #19c37d, #1bd86f);
+  color: #fff;
+}
+
+/* Call style (blue) */
+.floating a.call {
+  background: #0a3d91;
+  color: #fff;
+}
+
+/* If you want icon-only small circles on very small screens */
+@media (max-width: 520px) {
+  .floating a.whatsapp,
+  .floating a.call {
+    padding: 10px;
+    border-radius: 999px;
+    font-size: 13px;
+    gap: 6px;
+  }
+}
+/* Floating container (left column) — compact, not full width */
+.floating {
+  position: fixed;
+  left: 18px;
+  right: auto;        /* important — prevents full-width stretch */
+  bottom: 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  z-index: 999;
+  width: auto;        /* ensure container doesn't expand */
+  align-items: flex-start; /* left-align buttons inside container */
+  pointer-events: auto;
+}
+
+/* Compact button base */
+.floating a.whatsapp,
+.floating a.call {
+  display: inline-flex;       /* inline-flex keeps size to content */
+  align-items: center;
+  gap: 10px;
+  padding: 10px 14px;         /* compact padding */
+  border-radius: 28px;        /* pill shape */
+  font-weight: 700;
+  font-size: 14px;
+  text-decoration: none;
+  white-space: nowrap;        /* prevent text wrapping */
+  box-shadow: 0 8px 20px rgba(10, 40, 80, 0.08);
+  min-width: 44px;            /* ensures icon-only still looks good */
+  max-width: 260px;          /* prevents over-wide buttons */
+  overflow: hidden;
+  box-sizing: border-box;
+}
+
+/* WhatsApp style (green) */
+.floating a.whatsapp {
+  background: linear-gradient(45deg, #19c37d, #1bd86f);
+  color: #fff;
+}
+
+/* Call style (blue) */
+.floating a.call {
+  background: #0a3d91;
+  color: #fff;
+}
+
+/* If you want icon-only small circles on very small screens */
+@media (max-width: 520px) {
+  .floating a.whatsapp,
+  .floating a.call {
+    padding: 10px;
+    border-radius: 999px;
+    font-size: 13px;
+    gap: 6px;
+  }
+}  </style>
 </head>
 <body>
 
