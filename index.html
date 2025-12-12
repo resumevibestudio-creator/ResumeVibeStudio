@@ -191,18 +191,12 @@
     padding: 10px;
     border-radius: 999px;
     font-size: 13px;
-    gap: 6px;
-  }
-}  </style> /* ======= Restore header / headings / dark toggle and compact left floats ======= */
-
-/* Ensure header stays on top of floating buttons */
-header {
+    gap: 6px;}} header {
   position: sticky !important;
   top: 0;
   z-index: 6000 !important;
 }
 
-/* Make sure brand, nav links and theme toggle are visible and clickable */
 header .brand,
 header .tagline,
 header nav a,
@@ -213,7 +207,6 @@ header nav a,
   display: inline-block !important;
 }
 
-/* Force hero title and subtitle to be visible (cancels accidental hide from animations) */
 .hero .hero-title,
 .hero .hero-sub,
 .section h2 {
@@ -224,10 +217,8 @@ header nav a,
   color: var(--blue) !important;
 }
 
-/* Ensure section headings appear above floats */
 .section h2 { z-index: 4800 !important; }
 
-/* Floating container (left side) - compact and not full width */
 .floating {
   position: fixed !important;
   left: 18px !important;
@@ -236,13 +227,11 @@ header nav a,
   display: flex !important;
   flex-direction: column !important;
   gap: 12px !important;
-  z-index: 999 !important; /* keep under header */
+  z-index: 999 !important;
   width: auto !important;
-  align-items: flex-start !important; /* left align inside container */
-  pointer-events: auto !important;
+  align-items: flex-start !important;
 }
 
-/* Compact button base (prevents full width stretching) */
 .floating a.whatsapp,
 .floating a.call {
   display: inline-flex !important;
@@ -252,21 +241,22 @@ header nav a,
   border-radius: 28px !important;
   font-weight: 700 !important;
   font-size: 14px !important;
-  text-decoration: none !important;
   white-space: nowrap !important;
-  box-shadow: 0 8px 20px rgba(10, 40, 80, 0.08) !important;
   min-width: 44px !important;
   max-width: 260px !important;
   overflow: hidden !important;
-  box-sizing: border-box !important;
 }
 
-/* WhatsApp green */
-.floating a.whatsapp { background: linear-gradient(45deg,#19c37d,#1bd86f) !important; color:#fff !important; }
-/* Call blue */
-.floating a.call { background:#0a3d91 !important; color:#fff !important; }
+.floating a.whatsapp {
+  background: linear-gradient(45deg,#19c37d,#1bd86f) !important;
+  color:#fff !important;
+}
 
-/* Small screen adaptation: smaller circular icons */
+.floating a.call {
+  background:#0a3d91 !important;
+  color:#fff !important;
+}
+
 @media (max-width:520px) {
   .floating a.whatsapp,
   .floating a.call {
@@ -277,19 +267,20 @@ header nav a,
   }
 }
 
-/* Keep chatbot root to the right (do NOT change) */
 #rvChatRoot {
   position: fixed !important;
   right: 18px !important;
   bottom: 18px !important;
-  left: auto !important;
   z-index: 11000 !important;
 }
-/* Small safeguard: if an element accidentally got a full-screen overlay, lower it */
-[style*="width:100%"][style*="position:fixed"] { z-index: 100 !important; }
 
-/* Small transition nicety */
-header, .hero .hero-title, .section h2 { transition: opacity .25s ease, transform .25s ease; }
+[style*="width:100%"][style*="position:fixed"] {
+  z-index: 100 !important;
+}
+
+header, .hero .hero-title, .section h2 {
+  transition: opacity .25s ease, transform .25s ease;
+}</style> 
 </head>
 <body>
 
